@@ -1,0 +1,13 @@
+# OS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Node / Composer（今後入れても安全）
+node_modules/
+vendor/
+
+# Build / cache
+*.log
