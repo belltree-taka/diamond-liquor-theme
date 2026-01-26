@@ -1,2 +1,13 @@
 /* Test Comment */
 
+body {
+    background-color: blue;
+}
+
+.site {
+    background-color: pink;
+}
+
+.site-header {
+    background-color: yellow;
+}
