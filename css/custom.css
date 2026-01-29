@@ -10,4 +10,5 @@ body {
 
 .site-header {
     background-color: yellow;
+    align-items: center;
 }
