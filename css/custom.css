@@ -1,14 +1,13 @@
 /* Test Comment */
-
 body {
-    background-color: blue;
+  background-color: green;
 }
 
 .site {
-    background-color: pink;
+  background-color: pink;
 }
 
 .site-header {
-    background-color: yellow;
-    align-items: center;
-}
+  background-color: yellow;
+  align-items: center;
+}/*# sourceMappingURL=custom.css.map */
