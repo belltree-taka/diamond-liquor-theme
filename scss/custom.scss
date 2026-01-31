@@ -1,14 +1,118 @@
-/* Test Comment */
+/*===============================
+    Variables
+================================*/
+
+:root {
+    /* Color */
+    --off-white: #F4F1F1;
+    --off-black: #1A0005;
+    --background-color-grey: #d6d6d6;
+    --background-color-light-grey: #f4f4f4;
+    --red-900: #3E0A14;
+    --red-700: #651021;
+    --red-500: #84152B;
+    --red-300: #B7162C;
+    --blue-300: #2176C0;
+
+    /* Font Size */
+
+    /* Body */
+    --font-xs:   0.75rem;     /* 12px | helper / caption */
+    --font-sm:   0.875rem;    /* 14px | button / nav / label */
+    --font-base: 1rem;        /* 16px | p (body) */
+    --font-md:   1.125rem;    /* 18px | lead text */
+
+    /* Heading */
+    --font-xl:   1.25rem;     /* 20px | h4 (mobile & desktop) */
+    --font-2xl:  1.5rem;      /* 24px | h3 (mobile & desktop) */
+    --font-3xl:  1.875rem;    /* 30px | h2 (mobile) */
+    --font-4xl:  2.25rem;     /* 36px | h2 / h1 (mobile) */
+    --font-5xl:  3rem;        /* 48px | h1 (desktop) */
+    --font-6xl:  3.75rem;     /* 60px | hero (desktop only) */
+}
+
+/*===============================
+    General
+================================*/
+
+html {
+    font-size: 100%;
+}
 
 body {
-    background-color: green;
+    font-size: var(--font-base);
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.6;
 }
 
-.site {
-    background-color: pink;
+.site-main {
+    background-color: var(--background-color-grey);
+    width: 100%;
+    padding: 2rem;
 }
+
+.container {
+    max-width: 1200px;
+    background-color: var(--background-color-light-grey);
+    margin: auto;
+}
+
+/*===============================
+    Typographic Styles
+================================*/
+
+h1, h2, h3, h4 {
+    font-family: "Albert Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+h3, h4 {
+    font-weight: 400;
+}
+
+/*===============================
+    Header
+    
+================================*/
 
 .site-header {
-    background-color: yellow;
-    align-items: center;
+    
 }
+
+/*===============================
+    Home Page
+================================*/
+.home {
+
+}
+
+/*===============================
+    About Page
+================================*/
+.about {
+
+}
+
+/*===============================
+    Contact Page
+================================*/
+.contact {
+
+}
+
+/*===============================
+    Footer
+================================*/
+
+.footer {
+    
+}
+
+/*===============================
+    Media Query
+================================*/
+
