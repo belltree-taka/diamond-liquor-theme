@@ -78,6 +78,47 @@ h3, h4 {
 /*===============================
     About Page
 ================================*/
+.about-page {
+  background: #e5e5e5;
+  padding: 4rem 2rem;
+}
+
+.about-page h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Card layout fix */
+.card-container > .wp-block-group__inner-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+/* Card styling */
+.card {
+  text-align: center;
+}
+
+.card img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .card-container > .wp-block-group__inner-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container > .wp-block-group__inner-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 /*===============================
     Contact Page
 ================================*/
