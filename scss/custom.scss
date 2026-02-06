@@ -4,10 +4,9 @@
 
 :root {
     /* Color */
-    --off-white: #F4F1F1;
+    --white: #FFFFFF;
     --off-black: #1A0005;
     --background-color-grey: #d6d6d6;
-    --background-color-light-grey: #f4f4f4;
     --red-900: #3E0A14;
     --red-700: #651021;
     --red-500: #84152B;
@@ -29,6 +28,9 @@
     --font-4xl:  2.25rem;     /* 36px | h2 / h1 (mobile) */
     --font-5xl:  3rem;        /* 48px | h1 (desktop) */
     --font-6xl:  3.75rem;     /* 60px | hero (desktop only) */
+
+    /* Container */
+    --container-max-width: 1232px;
 }
 
 /*===============================
@@ -54,10 +56,10 @@ body {
 }
 
 .container {
-    max-width: 1200px;
-    background-color: var(--background-color-light-grey);
+    max-width: var(--container-max-width);
     margin: auto;
 }
+
 
 /*===============================
     Typographic Styles
@@ -76,19 +78,66 @@ h3, h4 {
 
 /*===============================
     Header
-    
 ================================*/
-
 .site-header {
-    
+    display: flex;
+    align-items: center;
+    height: 8.75rem;
+    padding: 0 2rem;
+    .site-branding {
+        display: flex;
+    }
+    .main-navigation {
+        .menu-toggle {
+            background-color: transparent;
+            border: none;
+            svg {
+                width: 2.75rem;
+                height: 2.75rem;
+            }
+        }
+        .menu.nav-menu {
+            border: 1px solid red;
+            display: flex;
+            gap: 4.375rem;
+            justify-content: flex-end;
+            a {
+                color: var(--red-700);
+            }
+        }
+    }
 }
 
 /*===============================
     Home Page
 ================================*/
 .home {
-
+    .container {
+        .hero-banner {
+            border: 1px solid red;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .card-container {
+        .wp-block-group__inner-container{
+            // display: flex;
+        }
+        .card {
+            .wp-block-group__inner-container{
+                display: flex;
+                flex-direction: column;
+                border: 1px solid blue;
+                .wp-block-image {
+                    border: 1px solid yellow;
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
+
 
 /*===============================
     About Page
@@ -115,4 +164,37 @@ h3, h4 {
 /*===============================
     Media Query
 ================================*/
+
+@media screen and (min-width: 37.5em) {
+    .site-header {
+        .main-navigation {
+                
+            .menu.nav-menu {
+                
+            }
+        }
+    }
+}
+
+
+// Tablet (≥ 768px)
+@media screen and (min-width: 768px) {
+    .home {
+        .card-container {
+        .wp-block-group__inner-container{
+            display: flex;
+        }
+        .card {
+            .wp-block-group__inner-container{
+                border: 1px solid red;
+            }
+        }
+    }
+    }
+}
+
+// Desktop (≥ 1024px)
+@media screen and (min-width: 1024px) {
+    
+}
 
