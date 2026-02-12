@@ -215,9 +215,18 @@ a.hero-banner__cta {
 /*===============================
     About Page
 ================================*/
-.about {
+// Jas's part - start
 
+.about {
+    
 }
+
+
+
+
+
+
+// Jas's part - end
 
 /*===============================
     Contact Page
@@ -291,6 +300,11 @@ a.hero-banner__cta {
             }
         }
     }
+    // Jas's part - start
+    // About Page Code
+
+
+    // Jas's part - end
 }
 
 // Tablet (≥ 768px)
@@ -308,30 +322,35 @@ a.hero-banner__cta {
         }
     }
     .home {
-    section.why-choose-us{
-        & > .wp-block-group__inner-container{
-            & > .why-choose-us-heading{
-                text-align: center;
-                margin-bottom: 4rem;
-            }
-            .card-container{
-                & > .wp-block-group__inner-container{
-                    flex-flow: row wrap;
+        section.why-choose-us{
+            & > .wp-block-group__inner-container{
+                & > .why-choose-us-heading{
                     text-align: center;
-                    .card{
-                        width: calc((100% - 5rem) / 2);
-                        position: relative;
-                        .wp-block-image{
+                    margin-bottom: 4rem;
+                }
+                .card-container{
+                    & > .wp-block-group__inner-container{
+                        flex-flow: row wrap;
+                        text-align: center;
+                        .card{
+                            width: calc((100% - 5rem) / 2);
                             position: relative;
-                            left: 50%;
-                            transform: translateX(-50%);
+                            .wp-block-image{
+                                position: relative;
+                                left: 50%;
+                                transform: translateX(-50%);
+                            }
                         }
                     }
                 }
             }
         }
     }
-    }
+    // Jas's part - start
+    // About Page Code
+
+    
+    // Jas's part - end
 }
 
 // Desktop (≥ 1024px)
@@ -355,6 +374,11 @@ a.hero-banner__cta {
             }
         }
     }
+    // Jas's part - start
+    // About Page Code
+
+    
+    // Jas's part - end
 }
 
 // Reset left and right padding at the maximum container width
@@ -379,5 +403,10 @@ a.hero-banner__cta {
             }
         }
     }
+    // Jas's part - start
+    // About Page Code
+
+    
+    // Jas's part - end
 }
 
