@@ -180,6 +180,9 @@ a.hero-banner__cta {
   color: var(--blue-300);
   font-weight: 600;
 }
+.home section.why-choose-us section.current-promotions {
+  border: 1px solid red;
+}
 
 /*===============================
     About Page
