@@ -10,7 +10,7 @@
     --off-black: #1A0005;
     --background-color-grey: #d6d6d6;
     --red-950: #230E12;
-    --red-900: #3E0A14;
+    --red-900: #33141A;
     --red-700: #651021;
     --red-500: #84152B;
     --red-300: #B7162C;
@@ -52,11 +52,6 @@ body {
     font-style: normal;
     line-height: 1.6;
     background-color: var(--off-white);
-}
-
-.site-main {
-    width: 100%;
-    padding: 2rem;
 }
 
 .container {
@@ -174,7 +169,42 @@ a.hero-banner__cta {
     Home Page
 ================================*/
 
-
+.home {
+    section.why-choose-us{
+        border: 1px solid red;
+        padding: 3rem 1.5rem; 
+        & > .wp-block-group__inner-container{
+            max-width: var(--container-max-width);
+            margin: auto;
+            & > .why-choose-us-heading{
+                color: var(--red-900);
+                font-size: var(--font-4xl);
+                margin-bottom: 3rem;
+            }
+            .card-container{
+                & > .wp-block-group__inner-container{
+                    display: flex;
+                    flex-flow: column nowrap;
+                    gap: 5rem;
+                    .card{
+                        .wp-block-image{
+                            width: 40px;
+                        }
+                        .wp-block-heading{
+                            font-size: var(--font-xl);
+                            text-transform: uppercase;
+                            font-weight: 700;
+                        }
+                        a{
+                            color: var(--blue-300);
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 
 
@@ -216,9 +246,9 @@ a.hero-banner__cta {
         gap: 1rem;
     }
     &__card-svg{
-        min-width: 28px;
-        max-width: 28px;
-        height: 28px;
+        min-width: 1.75rem;
+        max-width: 1.75rem;
+        height: 1.75rem;
         &--sns{
             margin-bottom: 0.5rem;
         }
@@ -273,6 +303,31 @@ a.hero-banner__cta {
             flex-direction: row;
         }
     }
+    .home {
+    section.why-choose-us{
+        & > .wp-block-group__inner-container{
+            & > .why-choose-us-heading{
+                text-align: center;
+                margin-bottom: 4rem;
+            }
+            .card-container{
+                & > .wp-block-group__inner-container{
+                    flex-flow: row wrap;
+                    text-align: center;
+                    .card{
+                        width: calc((100% - 5rem) / 2);
+                        position: relative;
+                        .wp-block-image{
+                            position: relative;
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    }
 }
 
 // Desktop (≥ 1024px)
@@ -281,6 +336,19 @@ a.hero-banner__cta {
         &__card-container{
             flex-flow: row wrap;
             margin-bottom: 6rem;
+        }
+    }
+    .home {
+        section.why-choose-us{
+            & > .wp-block-group__inner-container{
+                .card-container{
+                    & > .wp-block-group__inner-container{
+                        .card{
+                            width: calc((100% - 10rem) / 3);
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -292,6 +360,19 @@ a.hero-banner__cta {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
+        }
+    }
+    .home {
+        section.why-choose-us{
+            & > .wp-block-group__inner-container{
+                .card-container{
+                    & > .wp-block-group__inner-container{
+                        .card{
+                            width: calc((100% - 15rem) / 4);
+                        }
+                    }
+                }
+            }
         }
     }
 }
