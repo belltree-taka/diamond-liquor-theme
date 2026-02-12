@@ -30,38 +30,40 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'diamond-liquor-theme' ); ?></a>
 
-	<header id="masthead" class="site-header container">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	<header id="masthead" class="site-header">
+		<div class="site-header__container container">
+			<div class="site-branding">
 				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$diamond_liquor_theme_description = get_bloginfo( 'description', 'display' );
-			if ( $diamond_liquor_theme_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $diamond_liquor_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+				the_custom_logo();
+				
+				if ( is_front_page() && is_home() ) :
+					?>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php
+				else :
+					?>
+					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php
+				endif;
+				$diamond_liquor_theme_description = get_bloginfo( 'description', 'display' );
+				if ( $diamond_liquor_theme_description || is_customize_preview() ) :
+					?>
+					<p class="site-description"><?php echo $diamond_liquor_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+				<?php endif; ?>
+			</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-				<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18" stroke="#1e1e1e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-			</button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
+			<nav id="site-navigation" class="main-navigation">
+				<button class="site-header__toggle-btn menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<svg class="site-header__svg" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18" stroke="#1e1e1e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</button>
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					)
+				);
+				?>
+			</nav><!-- #site-navigation -->
+		</div>
 	</header><!-- #masthead -->

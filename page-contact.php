@@ -8,9 +8,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main contact">
-		<div class="container">
-			<?php the_content();?>
-		</div>
+		<?php the_content();?>
 	</main>
 
 <?php

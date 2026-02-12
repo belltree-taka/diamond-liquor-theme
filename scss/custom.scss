@@ -4,13 +4,17 @@
 
 :root {
     /* Color */
-    --white: #FFFFFF;
+    --white: #ffffff;
+    --off-white: #F9F7F5;
+    --off-white-hover: #E2DDD8;
     --off-black: #1A0005;
     --background-color-grey: #d6d6d6;
+    --red-950: #230E12;
     --red-900: #3E0A14;
     --red-700: #651021;
     --red-500: #84152B;
     --red-300: #B7162C;
+    --red-300-hover: #C63A4B;
     --blue-300: #2176C0;
 
     /* Font Size */
@@ -47,10 +51,10 @@ body {
     font-weight: 400;
     font-style: normal;
     line-height: 1.6;
+    background-color: var(--off-white);
 }
 
 .site-main {
-    background-color: var(--background-color-grey);
     width: 100%;
     padding: 2rem;
 }
@@ -60,9 +64,12 @@ body {
     margin: auto;
 }
 
+a {
+    text-decoration: none;
+}
 
 /*===============================
-    Typographic Styles
+Typographic Styles
 ================================*/
 
 h1, h2, h3, h4 {
@@ -77,66 +84,98 @@ h3, h4 {
 }
 
 /*===============================
-    Header
+Header
 ================================*/
+
 .site-header {
-    display: flex;
-    align-items: center;
-    height: 8.75rem;
-    padding: 0 2rem;
-    .site-branding {
-        display: flex;
+    position: relative;
+    background-color: var(--off-white);
+    padding: 2rem 1.5rem;
+    &__container{
+        // background-color: blue;
     }
-    .main-navigation {
-        .menu-toggle {
-            background-color: transparent;
-            border: none;
-            svg {
-                width: 2.75rem;
-                height: 2.75rem;
-            }
+    &__toggle-btn{
+        position: absolute;
+        top: 2rem;
+        right: 1.5rem;
+        background-color: transparent;
+        border: none;
+    }
+    &__svg{
+        width: 2.75rem;
+        height: 2.75rem;
+    }
+    .main-navigation{
+        .menu-item{
+            padding: 0.5rem 0;
         }
-        .menu.nav-menu {
-            border: 1px solid red;
-            display: flex;
-            gap: 4.375rem;
-            justify-content: flex-end;
-            a {
-                color: var(--red-700);
+        a {
+            color: var(--red-300);
+            &:hover{
+                color: var(--red-300-hover);
             }
         }
     }
 }
 
+
+/*===============================
+Hero Banner
+================================*/
+
+.hero-banner {
+    position: relative;
+    img{
+        width: 100%;
+        min-height: 32rem;
+        display: block;
+        margin: auto;
+        object-fit: cover;
+    }
+    &__text-container{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 3.5rem 1.5rem;
+    }
+    &__title{
+        color: var(--red-300);
+        font-size: var(--font-3xl);
+        line-height: 1;
+        text-transform: uppercase;
+    }
+    &__subtitle{
+        color: var(--white);
+        font-size: var(--font-xl);
+    }
+    &__cta-container{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+    &__cta{
+        font-size: var(--font-base);
+        background-color: var(--red-300);
+        padding: 1rem 2rem;
+        border-radius: 6px;
+    }
+}
+
+// CTA button font color (this increases the specificity to apply style)
+a.hero-banner__cta {
+    color: var(--white);
+}
+
+
 /*===============================
     Home Page
 ================================*/
-.home {
-    .container {
-        .hero-banner {
-            border: 1px solid red;
-            img {
-                width: 100%;
-            }
-        }
-    }
-    .card-container {
-        .wp-block-group__inner-container{
-            // display: flex;
-        }
-        .card {
-            .wp-block-group__inner-container{
-                display: flex;
-                flex-direction: column;
-                border: 1px solid blue;
-                .wp-block-image {
-                    border: 1px solid yellow;
-                    width: 100%;
-                }
-            }
-        }
-    }
-}
+
+
+
 
 
 /*===============================
@@ -157,44 +196,103 @@ h3, h4 {
     Footer
 ================================*/
 
-.footer {
-    
+.site-footer {
+    padding: 3.5rem 1.5rem;
+    color: var(--white);
+    background-color: var(--red-950);
+    margin-bottom: -1.5rem; // This deletes the gap under the footer bottom
+    &__card-container{
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 6rem;
+        margin-bottom: 3rem;
+    }
+    &__card-title{
+        font-size: var(--font-2xl);
+    }
+    &__card-item{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    &__card-svg{
+        min-width: 28px;
+        max-width: 28px;
+        height: 28px;
+        &--sns{
+            margin-bottom: 0.5rem;
+        }
+    }
+    &__copyright{
+        text-transform: capitalize;
+        text-align: center;
+    }
+}
+
+.site-footer a.site-footer__card-text.site-footer__card-text--sns-link{
+    color: var(--white);
+}
+
+.site-footer a.site-footer__card-text.site-footer__card-text--sns-link:hover{
+    color: var(--off-white-hover);
 }
 
 /*===============================
     Media Query
 ================================*/
-
+// (≥ 600px)
 @media screen and (min-width: 37.5em) {
-    .site-header {
-        .main-navigation {
-                
-            .menu.nav-menu {
-                
+    .site-header{
+        &__container{
+            position: relative;
+        }
+        .main-navigation{
+            .menu{
+                display: flex;
+                gap: 2rem;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
             }
         }
     }
 }
 
-
 // Tablet (≥ 768px)
 @media screen and (min-width: 768px) {
-    .home {
-        .card-container {
-        .wp-block-group__inner-container{
-            display: flex;
+    .hero-banner{
+        &__title{
+            font-size: var(--font-5xl);
+            max-width: 37rem;
         }
-        .card {
-            .wp-block-group__inner-container{
-                border: 1px solid red;
-            }
+        &__text-container{
+            padding: 3.5rem 2rem;
         }
-    }
+        &__cta-container{
+            flex-direction: row;
+        }
     }
 }
 
 // Desktop (≥ 1024px)
 @media screen and (min-width: 1024px) {
-    
+    .site-footer{
+        &__card-container{
+            flex-flow: row wrap;
+            margin-bottom: 6rem;
+        }
+    }
+}
+
+// Reset left and right padding at the maximum container width
+@media screen and (min-width: 1232px) {
+    .hero-banner{
+            &__text-inner-container{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
 }
 
