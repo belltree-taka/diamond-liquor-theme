@@ -152,7 +152,6 @@ a.hero-banner__cta {
     Home Page
 ================================*/
 .home section.why-choose-us {
-  border: 1px solid red;
   padding: 3rem 1.5rem;
 }
 .home section.why-choose-us > .wp-block-group__inner-container {

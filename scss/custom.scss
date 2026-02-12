@@ -170,8 +170,8 @@ a.hero-banner__cta {
 ================================*/
 
 .home {
+    // Why Choose Us Section
     section.why-choose-us{
-        border: 1px solid red;
         padding: 3rem 1.5rem; 
         & > .wp-block-group__inner-container{
             max-width: var(--container-max-width);
@@ -203,6 +203,10 @@ a.hero-banner__cta {
                 }
             }
         }
+    // Current Promotions Section
+    section.current-promotions{
+        border: 1px solid red;
+    }
     }
 }
 
