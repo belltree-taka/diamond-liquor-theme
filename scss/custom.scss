@@ -5,6 +5,7 @@
 :root {
     /* Color */
     --white: #ffffff;
+    --black: #000000;
     --off-white: #F9F7F5;
     --off-white-hover: #E2DDD8;
     --off-black: #1A0005;
@@ -16,6 +17,8 @@
     --red-300: #B7162C;
     --red-300-hover: #C63A4B;
     --blue-300: #2176C0;
+    --green-900: #2B3427;
+    --yellow-500: #F2C101;
 
     /* Font Size */
 
@@ -64,7 +67,29 @@ a {
 }
 
 /*===============================
-Typographic Styles
+    Mixin
+================================*/
+
+@mixin section-header-mobile {
+    font-size: var(--font-3xl);
+    margin-bottom: 3rem;
+}
+
+@mixin section-header-desktop {
+    font-size: var(--font-4xl);
+    margin-bottom: 4rem;
+}
+
+@mixin button-style {
+    color: var(--white);
+    font-size: var(--font-base);
+    background-color: var(--red-300);
+    padding: 1rem 2rem;
+    border-radius: 6px;
+}
+
+/*===============================
+    Typographic Styles
 ================================*/
 
 h1, h2, h3, h4 {
@@ -79,7 +104,7 @@ h3, h4 {
 }
 
 /*===============================
-Header
+    Header
 ================================*/
 
 .site-header {
@@ -115,11 +140,12 @@ Header
 
 
 /*===============================
-Hero Banner
+    Hero Banner
 ================================*/
 
 .hero-banner {
     position: relative;
+    box-shadow: 0 18px 40px -18px rgba(0,0,0,0.55);
     img{
         width: 100%;
         min-height: 32rem;
@@ -152,10 +178,7 @@ Hero Banner
         align-items: flex-start;
     }
     &__cta{
-        font-size: var(--font-base);
-        background-color: var(--red-300);
-        padding: 1rem 2rem;
-        border-radius: 6px;
+        @include button-style;
     }
 }
 
@@ -172,26 +195,27 @@ a.hero-banner__cta {
 .home {
     // Why Choose Us Section
     section.why-choose-us{
+        color: var(--green-900);
         padding: 3rem 1.5rem; 
         & > .wp-block-group__inner-container{
             max-width: var(--container-max-width);
             margin: auto;
             & > .why-choose-us-heading{
                 color: var(--red-900);
-                font-size: var(--font-4xl);
-                margin-bottom: 3rem;
+                @include section-header-mobile;
             }
             .card-container{
                 & > .wp-block-group__inner-container{
                     display: flex;
                     flex-flow: column nowrap;
-                    gap: 5rem;
+                    gap: 3rem;
                     .card{
                         .wp-block-image{
                             width: 40px;
                         }
                         .wp-block-heading{
-                            font-size: var(--font-xl);
+                            font-size: var(--font-2xl);
+                            color: var(--black);
                             text-transform: uppercase;
                             font-weight: 700;
                         }
@@ -203,13 +227,99 @@ a.hero-banner__cta {
                 }
             }
         }
+    }
     // Current Promotions Section
     section.current-promotions{
-        border: 1px solid red;
+        color: var(--black);
+        padding: 3rem 1.5rem;
+        & > .wp-block-group__inner-container{
+            max-width: var(--container-max-width);
+            margin: auto;
+            & > .current-promotions-heading{
+                color: var(--red-900);
+                @include section-header-mobile;
+            }
+            .card-container{
+                & > .wp-block-group__inner-container{
+                    display: flex;
+                    flex-flow: column nowrap;
+                    gap: 1.75rem;
+                    .card{
+                        padding: 1rem;
+                        border: 2px solid var(--red-700);
+                        background-color: var(--white);
+                        border-radius: 10px;
+                        .wp-block-heading{
+                            color: var(--black);
+                            font-size: var(--font-2xl);
+                            text-transform: uppercase;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
     }
+    // Review Section
+    section.review{
+        background-color: var(--red-700);
+        color: var(--red-700);
+        padding: 3rem 1.5rem;
+        & > .wp-block-group__inner-container{
+            max-width: var(--container-max-width);
+            margin: auto;
+            & > .review-heading{
+                color: var(--off-white);
+                @include section-header-mobile;
+            }
+            .card-container{
+                & > .wp-block-group__inner-container{
+                    display: flex;
+                    flex-flow: column nowrap;
+                    gap: 1.75rem;
+                    .card{
+                        padding: 1rem;
+                        background-color: var(--off-white);
+                        border-radius: 10px;
+                        box-shadow: 0 18px 40px -18px rgba(0,0,0,0.55);
+                        .stars{
+                            color: var(--yellow-500);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // Event Inquiry Section
+    section.event-inquiry{
+        color: var(--black);
+        padding: 3rem 1.5rem;
+        & > .wp-block-group__inner-container{
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 1.75rem;
+            max-width: var(--container-max-width);
+            margin: auto;
+            .event-inquiry-text{
+                .inquiry-heading{
+                    color: var(--red-900);
+                    @include section-header-mobile;
+                    & + p {
+                        margin-bottom: 5rem;
+                    }
+                }
+                a{
+                    @include button-style;
+                }
+            }
+            .wp-block-image{
+                img{
+                    border-radius: 10px;
+                }
+            }
+        }
     }
 }
-
 
 
 /*===============================
@@ -326,7 +436,7 @@ a.hero-banner__cta {
             & > .wp-block-group__inner-container{
                 & > .why-choose-us-heading{
                     text-align: center;
-                    margin-bottom: 4rem;
+                    @include section-header-desktop;
                 }
                 .card-container{
                     & > .wp-block-group__inner-container{
@@ -345,6 +455,56 @@ a.hero-banner__cta {
                 }
             }
         }
+        section.current-promotions{
+            padding: 3rem 1.5rem 5rem;
+            & > .wp-block-group__inner-container{
+                & > .current-promotions-heading{
+                    text-align: center;
+                    @include section-header-desktop;
+                }
+                .card-container{
+                    & > .wp-block-group__inner-container{
+                        flex-flow: row wrap;
+                        .card{
+                            width: calc((100% - 1.75rem) / 2);
+                        }
+                    }
+                }
+            }
+        }
+        section.review{
+            padding: 3rem 1.5rem 5rem;
+            & > .wp-block-group__inner-container{
+                & > .review-heading{
+                    text-align: center;
+                    @include section-header-desktop;
+                }
+                .card-container{
+                    & > .wp-block-group__inner-container{
+                        flex-flow: row wrap;
+                        .card{
+                            width: calc((100% - 1.75rem) / 2);
+                        }
+                    }
+                }
+            }
+        }
+        section.event-inquiry{
+        & > .wp-block-group__inner-container{
+            flex-flow: row wrap;
+            .event-inquiry-text{
+                width: calc((100% - 1.75rem) / 2);
+                order: 1;
+                .inquiry-heading{
+                    @include section-header-desktop;
+                }
+            }
+            .wp-block-image{
+                order: 2;
+                width: calc((100% - 1.75rem) / 2);
+            }
+        }
+    }
     }
     // Jas's part - start
     // About Page Code
@@ -361,19 +521,7 @@ a.hero-banner__cta {
             margin-bottom: 6rem;
         }
     }
-    .home {
-        section.why-choose-us{
-            & > .wp-block-group__inner-container{
-                .card-container{
-                    & > .wp-block-group__inner-container{
-                        .card{
-                            width: calc((100% - 10rem) / 3);
-                        }
-                    }
-                }
-            }
-        }
-    }
+    
     // Jas's part - start
     // About Page Code
 
@@ -396,13 +544,36 @@ a.hero-banner__cta {
                 .card-container{
                     & > .wp-block-group__inner-container{
                         .card{
-                            width: calc((100% - 15rem) / 4);
+                            width: calc((100% - 9rem) / 4);
+                        }
+                    }
+                }
+            }
+        }
+        section.current-promotions{
+            & > .wp-block-group__inner-container{
+                .card-container{
+                    & > .wp-block-group__inner-container{
+                        .card{
+                            width: calc((100% - 3.5rem) / 3);
+                        }
+                    }
+                }
+            }
+        }
+        section.review{
+            & > .wp-block-group__inner-container{
+                .card-container{
+                    & > .wp-block-group__inner-container{
+                        .card{
+                            width: calc((100% - 3.5rem) / 3);
                         }
                     }
                 }
             }
         }
     }
+    
     // Jas's part - start
     // About Page Code
 
