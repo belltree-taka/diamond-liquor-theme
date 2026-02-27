@@ -19,6 +19,7 @@
     --red-100: #957474;
     --blue-300: #2176C0;
     --green-900: #2B3427;
+    --green-300: #0a7a4b;
     --yellow-500: #F2C101;
 
     /* Font Size */
@@ -112,9 +113,6 @@ h3, h4 {
     position: relative;
     background-color: var(--off-white);
     padding: 2rem 1.5rem;
-    &__container{
-        // background-color: blue;
-    }
     &__toggle-btn{
         position: absolute;
         top: 2rem;
@@ -167,6 +165,14 @@ h3, h4 {
         font-size: var(--font-3xl);
         line-height: 1;
         text-transform: uppercase;
+    }
+    &__contact-page-title{
+        color: var(--white);
+        font-size: var(--font-3xl);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     &__subtitle{
         color: var(--white);
@@ -378,6 +384,12 @@ a.hero-banner__cta {
         flex-flow: column nowrap;
         gap: 1rem;
         background-color: var(--white);
+            .forminator-error,.forminator-error-message{
+                color: var(--red-500);
+            }
+            .forminator-success{
+                color: var(--green-300);
+            }
         .forminator-field{
             display: flex;
             flex-flow: column nowrap;
@@ -386,9 +398,6 @@ a.hero-banner__cta {
                 border: 1px solid var(--red-100);
                 padding: 0.5rem 1rem;
                 border-radius: 8px;
-            }
-            .forminator-select--field{
-                padding-right: 10rem;
             }
             .forminator-button-submit{
                 color: var(--off-white);
@@ -498,6 +507,9 @@ a.hero-banner__cta {
         }
         &__cta-container{
             flex-direction: row;
+        }
+        &__contact-page-title{
+            font-size: var(--font-5xl);
         }
     }
     .home {
