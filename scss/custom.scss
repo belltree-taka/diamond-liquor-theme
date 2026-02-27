@@ -16,6 +16,7 @@
     --red-500: #84152B;
     --red-300: #B7162C;
     --red-300-hover: #C63A4B;
+    --red-100: #957474;
     --blue-300: #2176C0;
     --green-900: #2B3427;
     --yellow-500: #F2C101;
@@ -240,6 +241,7 @@ a.hero-banner__cta {
                 @include section-header-mobile;
             }
             .card-container{
+                margin-bottom: 4rem;
                 & > .wp-block-group__inner-container{
                     display: flex;
                     flex-flow: column nowrap;
@@ -255,6 +257,18 @@ a.hero-banner__cta {
                             text-transform: uppercase;
                             font-weight: 700;
                         }
+                    }
+                }
+            }
+            .sns-heading {
+                text-align: center;
+                font-size: var(--font-2xl);
+                color: var(--blue-300);
+                & + .wp-block-group {
+                    .wp-block-group__inner-container{
+                        display: flex;
+                        justify-content: center;
+                        gap: 3.75rem;
                     }
                 }
             }
@@ -342,7 +356,62 @@ a.hero-banner__cta {
     Contact Page
 ================================*/
 .contact {
-
+    section.contact{
+        & > .wp-block-group__inner-container {
+            max-width: var(--container-max-width);
+            margin: auto;
+            padding: 3rem 1.5rem;
+            & .contact-heading{
+                color: var(--black);
+                @include section-header-mobile;
+            }
+        }
+        .wp-block-group{
+            margin-bottom: 4rem;
+        }
+    }
+    form{
+        border: 1px solid var(--red-100);
+        border-radius: 8px;
+        padding: 1.5rem 1rem;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1rem;
+        background-color: var(--white);
+        .forminator-field{
+            display: flex;
+            flex-flow: column nowrap;
+            .forminator-input,.forminator-select--field,
+            .forminator-textarea,.forminator-button-submit {
+                border: 1px solid var(--red-100);
+                padding: 0.5rem 1rem;
+                border-radius: 8px;
+            }
+            .forminator-select--field{
+                padding-right: 10rem;
+            }
+            .forminator-button-submit{
+                color: var(--off-white);
+                background-color: var(--red-700);
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-items: center;
+                height: 3rem;
+                gap: 0.5rem;
+                &::before{
+                    content: "";
+                width: 22px;
+                height: 19px;
+                display: inline-block;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 19' fill='none'%3E%3Cpath d='M7.724 9.015.75 2.885A59.8 59.8 0 0 1 20.916.907a59.8 59.8 0 0 1-10.871 17.098zm0 0 6.39-3.927' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                background-size: contain;
+                background-repeat: no-repeat;
+                }
+            }
+        }
+        
+    }
 }
 
 /*===============================
@@ -527,6 +596,23 @@ a.hero-banner__cta {
 
     
     // Jas's part - end
+    .contact{
+        section.contact{
+            & > .wp-block-group__inner-container{
+                display: flex;
+                gap: 5rem;
+                & .contact-heading{
+                    @include section-header-desktop();
+                }
+                .wp-block-group{
+                    flex: 0 1 45ch;
+                }
+                form.forminator-ui{
+                    flex: 1;
+                }
+            }
+        }
+    }
 }
 
 // Reset left and right padding at the maximum container width
@@ -573,6 +659,7 @@ a.hero-banner__cta {
             }
         }
     }
+    
     
     // Jas's part - start
     // About Page Code
