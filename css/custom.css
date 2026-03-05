@@ -3,265 +3,975 @@
 ================================*/
 :root {
   /* Color */
-  --off-white: #F4F1F1;
+  --white: #ffffff;
+  --black: #000000;
+  --off-white: #F9F7F5;
+  --off-white-hover: #E2DDD8;
   --off-black: #1A0005;
   --background-color-grey: #d6d6d6;
-  --background-color-light-grey: #f4f4f4;
-  --red-900: #3E0A14;
+  --red-950: #230E12;
+  --red-900: #33141A;
   --red-700: #651021;
   --red-500: #84152B;
   --red-300: #B7162C;
+  --red-300-hover: #C63A4B;
+  --red-100: #957474;
   --blue-300: #2176C0;
-
+  --green-900: #2B3427;
+  --green-300: #0a7a4b;
+  --yellow-500: #F2C101;
   /* Font Size */
-  --font-xs: 0.75rem;
-  --font-sm: 0.875rem;
-  --font-base: 1rem;
-  --font-md: 1.125rem;
-  --font-xl: 1.25rem;
-  --font-2xl: 1.5rem;
-  --font-3xl: 1.875rem;
-  --font-4xl: 2.25rem;
-  --font-5xl: 3rem;
-  --font-6xl: 3.75rem;
+  /* Body */
+  --font-xs: 0.75rem; /* 12px | helper / caption */
+  --font-sm: 0.875rem; /* 14px | button / nav / label */
+  --font-base: 1rem; /* 16px | p (body) */
+  --font-md: 1.125rem; /* 18px | lead text */
+  /* Heading */
+  --font-xl: 1.25rem; /* 20px | h4 (mobile & desktop) */
+  --font-2xl: 1.5rem; /* 24px | h3 (mobile & desktop) */
+  --font-3xl: 1.875rem; /* 30px | h2 (mobile) */
+  --font-4xl: 2.25rem; /* 36px | h2 / h1 (mobile) */
+  --font-5xl: 3rem; /* 48px | h1 (desktop) */
+  --font-6xl: 3.75rem; /* 60px | hero (desktop only) */
+  /* Container */
+  --container-max-width: 1232px;
 }
 
 /*===============================
-    GENERAL LAYOUT
+    General
 ================================*/
-
-/* Limit width for all pages that use .container */
-.site-main {
-  background-color: var(--background-color-grey);
-  padding: 2rem 1.5rem;
+html {
+  font-size: 100%;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: var(--background-color-light-grey);
-}
-
-/*===============================
-    ABOUT PAGE – MOBILE FIRST
-================================*/
-
-.about-page .container {
+body {
+  font-size: var(--font-base);
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
   background-color: var(--off-white);
 }
 
-/* Top-level wrapper that contains sidebar + main */
-.about-layout {
-  display: block; /* stack on mobile */
+.container {
+  max-width: var(--container-max-width);
+  margin: auto;
 }
 
-/*------------------------------
-  Sidebar (mobile)
-------------------------------*/
-
-.about-sidebar {
-  background-color: #e0e0e0;
-  padding: 1.5rem 1.25rem;
-  margin-bottom: 1.5rem;
+a {
+  text-decoration: none;
 }
 
-.about-sidebar .wp-block-heading {
-  font-size: var(--font-2xl);
-  margin: 0 0 1rem;
+/*===============================
+    Mixin
+================================*/
+/*===============================
+    Typographic Styles
+================================*/
+h1, h2, h3, h4 {
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
-.about-sidebar-item {
-  padding: 0.75rem 0;
-  border-top: 1px solid #c0c0c0;
+h3, h4 {
+  font-weight: 400;
 }
 
-.about-sidebar-item:first-of-type {
-  border-top: none;
+/*===============================
+    Header
+================================*/
+.site-header {
+  position: relative;
+  background-color: var(--off-white);
+  padding: 2rem 1.5rem;
+}
+.site-header__toggle-btn {
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
+  background-color: transparent;
+  border: none;
+}
+.site-header__svg {
+  width: 2.75rem;
+  height: 2.75rem;
+}
+.site-header .main-navigation .menu-item {
+  padding: 0.5rem 0;
+}
+.site-header .main-navigation a {
+  color: var(--red-300);
+}
+.site-header .main-navigation a:hover {
+  color: var(--red-300-hover);
 }
 
-.about-sidebar-item .wp-block-heading {
-  font-size: var(--font-sm);
-  margin: 0 0 0.25rem;
+/*===============================
+    Hero Banner
+================================*/
+.hero-banner {
+  position: relative;
+  box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.55);
 }
-
-.about-sidebar-item p {
-  font-size: var(--font-xs);
-  margin: 0;
+.hero-banner img {
+  width: 100%;
+  min-height: 32rem;
+  display: block;
+  margin: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-
-/*------------------------------
-  Main content (mobile)
-------------------------------*/
-
-.about-main {
-  padding: 1rem 1.5rem 2.5rem;
+.hero-banner__text-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 3.5rem 1.5rem;
 }
-
-/* Hero section */
-.about-hero {
-  background-color: #d6d6d6;
-  padding: 2.5rem 1.5rem;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.about-hero .wp-block-heading {
+.hero-banner__title {
+  color: var(--red-300);
   font-size: var(--font-3xl);
-  margin: 0;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.hero-banner__contact-page-title {
+  color: var(--white);
+  font-size: var(--font-3xl);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hero-banner__subtitle {
+  color: var(--white);
+  font-size: var(--font-xl);
+}
+.hero-banner__cta-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.hero-banner__cta {
+  color: var(--white);
+  font-size: var(--font-base);
+  background-color: var(--red-300);
+  padding: 1rem 2rem;
+  border-radius: 6px;
 }
 
-/* Generic section styles */
-.about-section {
+a.hero-banner__cta {
+  color: var(--white);
+}
+
+/*===============================
+    Home Page
+================================*/
+.home section.why-choose-us {
+  color: var(--green-900);
+  padding: 3rem 1.5rem;
+}
+.home section.why-choose-us > .wp-block-group__inner-container {
+  max-width: var(--container-max-width);
+  margin: auto;
+}
+.home section.why-choose-us > .wp-block-group__inner-container > .why-choose-us-heading {
+  color: var(--red-900);
+  font-size: var(--font-3xl);
   margin-bottom: 3rem;
 }
-
-.about-section .wp-block-heading {
+.home section.why-choose-us > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 3rem;
+}
+.home section.why-choose-us > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container .card .wp-block-image {
+  width: 40px;
+}
+.home section.why-choose-us > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container .card .wp-block-heading {
   font-size: var(--font-2xl);
-  margin-bottom: 1.25rem;
+  color: var(--black);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.home section.why-choose-us > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container .card a {
+  color: var(--blue-300);
+  font-weight: 600;
+}
+.home section.current-promotions {
+  color: var(--black);
+  padding: 3rem 1.5rem;
+}
+.home section.current-promotions > .wp-block-group__inner-container {
+  max-width: var(--container-max-width);
+  margin: auto;
+}
+.home section.current-promotions > .wp-block-group__inner-container > .current-promotions-heading {
+  color: var(--red-900);
+  font-size: var(--font-3xl);
+  margin-bottom: 3rem;
+}
+.home section.current-promotions > .wp-block-group__inner-container .card-container {
+  margin-bottom: 4rem;
+}
+.home section.current-promotions > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.75rem;
+}
+.home section.current-promotions > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container .card {
+  padding: 1rem;
+  border: 2px solid var(--red-700);
+  background-color: var(--white);
+  border-radius: 10px;
+}
+.home section.current-promotions > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container .card .wp-block-heading {
+  color: var(--black);
+  font-size: var(--font-2xl);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.home section.current-promotions > .wp-block-group__inner-container .sns-heading {
+  text-align: center;
+  font-size: var(--font-2xl);
+  color: var(--blue-300);
+}
+.home section.current-promotions > .wp-block-group__inner-container .sns-heading + .wp-block-group .wp-block-group__inner-container {
+  display: flex;
+  justify-content: center;
+  gap: 3.75rem;
+}
+.home section.review {
+  background-color: var(--red-700);
+  color: var(--red-700);
+  padding: 3rem 1.5rem;
+}
+.home section.review > .wp-block-group__inner-container {
+  max-width: var(--container-max-width);
+  margin: auto;
+}
+.home section.review > .wp-block-group__inner-container > .review-heading {
+  color: var(--off-white);
+  font-size: var(--font-3xl);
+  margin-bottom: 3rem;
+}
+.home section.review > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.75rem;
+}
+.home section.review > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container .card {
+  padding: 1rem;
+  background-color: var(--off-white);
+  border-radius: 10px;
+  box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.55);
+}
+.home section.review > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container .card .stars {
+  color: var(--yellow-500);
+}
+.home section.event-inquiry {
+  color: var(--black);
+  padding: 3rem 1.5rem;
+}
+.home section.event-inquiry > .wp-block-group__inner-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.75rem;
+  max-width: var(--container-max-width);
+  margin: auto;
+}
+.home section.event-inquiry > .wp-block-group__inner-container .event-inquiry-text .inquiry-heading {
+  color: var(--red-900);
+  font-size: var(--font-3xl);
+  margin-bottom: 3rem;
+}
+.home section.event-inquiry > .wp-block-group__inner-container .event-inquiry-text .inquiry-heading + p {
+  margin-bottom: 5rem;
+}
+.home section.event-inquiry > .wp-block-group__inner-container .event-inquiry-text a {
+  color: var(--white);
+  font-size: var(--font-base);
+  background-color: var(--red-300);
+  padding: 1rem 2rem;
+  border-radius: 6px;
+}
+.home section.event-inquiry > .wp-block-group__inner-container .wp-block-image img {
+  border-radius: 10px;
 }
 
-/* Our Story section */
-.about-story .wp-block-columns {
-  gap: 1.5rem;
+/*===============================
+  ABOUT PAGE
+================================*/
+body.page-id-22,
+body.page-template-template-about,
+body.page-template-template-about-php,
+body.page-template-about,
+body.page-template-about-php,
+body.page-slug-about-us-2 {
+  /* remove theme sidebar widgets if theme outputs them */
 }
-
-.about-story .wp-block-column p {
-  margin-top: 0;
+body.page-id-22 #secondary,
+body.page-template-template-about #secondary,
+body.page-template-template-about-php #secondary,
+body.page-template-about #secondary,
+body.page-template-about-php #secondary,
+body.page-slug-about-us-2 #secondary {
+  display: none;
 }
-
-.about-story img {
+body.page-id-22,
+body.page-template-template-about,
+body.page-template-template-about-php,
+body.page-template-about,
+body.page-template-about-php,
+body.page-slug-about-us-2 {
+  /* remove default WP title/header output if theme still prints it */
+}
+body.page-id-22 .entry-header,
+body.page-id-22 .entry-title,
+body.page-id-22 .post-thumbnail,
+body.page-template-template-about .entry-header,
+body.page-template-template-about .entry-title,
+body.page-template-template-about .post-thumbnail,
+body.page-template-template-about-php .entry-header,
+body.page-template-template-about-php .entry-title,
+body.page-template-template-about-php .post-thumbnail,
+body.page-template-about .entry-header,
+body.page-template-about .entry-title,
+body.page-template-about .post-thumbnail,
+body.page-template-about-php .entry-header,
+body.page-template-about-php .entry-title,
+body.page-template-about-php .post-thumbnail,
+body.page-slug-about-us-2 .entry-header,
+body.page-slug-about-us-2 .entry-title,
+body.page-slug-about-us-2 .post-thumbnail {
+  display: none;
+}
+body.page-id-22,
+body.page-template-template-about,
+body.page-template-template-about-php,
+body.page-template-about,
+body.page-template-about-php,
+body.page-slug-about-us-2 {
+  /* make About page full width (no container constraint) */
+}
+body.page-id-22 .site-main.about,
+body.page-template-template-about .site-main.about,
+body.page-template-template-about-php .site-main.about,
+body.page-template-about .site-main.about,
+body.page-template-about-php .site-main.about,
+body.page-slug-about-us-2 .site-main.about {
   width: 100%;
-  height: auto;
-  display: block;
+  margin: 0;
+  padding: 0;
 }
-
-/*------------------------------
-  Our Locations – mobile
-------------------------------*/
-
-.about-locations {
-  background-color: var(--red-900);
-  color: #fff;
-  padding: 2.5rem 1.75rem;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem; /* full-bleed band */
+body.page-id-22,
+body.page-template-template-about,
+body.page-template-template-about-php,
+body.page-template-about,
+body.page-template-about-php,
+body.page-slug-about-us-2 {
+  /* ===============================
+     HERO
+  =============================== */
 }
-
-.about-locations .wp-block-heading {
-  margin-bottom: 1.5rem;
+body.page-id-22 .hero-banner,
+body.page-template-template-about .hero-banner,
+body.page-template-template-about-php .hero-banner,
+body.page-template-about .hero-banner,
+body.page-template-about-php .hero-banner,
+body.page-slug-about-us-2 .hero-banner {
+  position: relative;
+  overflow: hidden;
+  box-shadow: none; /* remove homepage heavy shadow */
 }
-
-/* Grid goes on the inner container inside locations-grid */
-.locations-grid > .wp-block-group__inner-container {
-  display: grid;
-  grid-template-columns: 1fr; /* one card per row on mobile */
-  gap: 1.5rem;
-}
-
-.location-card {
-  background-color: #fff;
-  color: var(--off-black);
-  padding: 1.25rem;
-  max-width: 520px;
-  margin: 0 auto; /* center cards */
-}
-
-.location-card img {
+body.page-id-22 .hero-banner img,
+body.page-template-template-about .hero-banner img,
+body.page-template-template-about-php .hero-banner img,
+body.page-template-about .hero-banner img,
+body.page-template-about-php .hero-banner img,
+body.page-slug-about-us-2 .hero-banner img {
   width: 100%;
-  height: auto;
+  height: 20rem; /* SHORTER hero */
+  min-height: 20rem;
   display: block;
-  margin-bottom: 0.75rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
-
-.location-card .wp-block-heading {
-  font-size: var(--font-xl);
-  margin: 0 0 0.5rem;
+body.page-id-22 .hero-banner,
+body.page-template-template-about .hero-banner,
+body.page-template-template-about-php .hero-banner,
+body.page-template-about .hero-banner,
+body.page-template-about-php .hero-banner,
+body.page-slug-about-us-2 .hero-banner {
+  /* lighter overlay (screenshot look) */
 }
-
-.location-card p {
-  font-size: var(--font-sm);
+body.page-id-22 .hero-banner::before,
+body.page-template-template-about .hero-banner::before,
+body.page-template-template-about-php .hero-banner::before,
+body.page-template-about .hero-banner::before,
+body.page-template-about-php .hero-banner::before,
+body.page-slug-about-us-2 .hero-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+body.page-id-22 .hero-banner__text-container,
+body.page-template-template-about .hero-banner__text-container,
+body.page-template-template-about-php .hero-banner__text-container,
+body.page-template-about .hero-banner__text-container,
+body.page-template-about-php .hero-banner__text-container,
+body.page-slug-about-us-2 .hero-banner__text-container {
+  position: absolute;
+  inset: 0;
+  padding: 3.5rem 1.5rem;
+  z-index: 2;
+}
+body.page-id-22 .hero-banner__contact-page-title,
+body.page-template-template-about .hero-banner__contact-page-title,
+body.page-template-template-about-php .hero-banner__contact-page-title,
+body.page-template-about .hero-banner__contact-page-title,
+body.page-template-about-php .hero-banner__contact-page-title,
+body.page-slug-about-us-2 .hero-banner__contact-page-title {
+  color: var(--white);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  white-space: normal;
+  text-transform: none; /* normal case like screenshot */
+}
+body.page-id-22,
+body.page-template-template-about,
+body.page-template-template-about-php,
+body.page-template-about,
+body.page-template-about-php,
+body.page-slug-about-us-2 {
+  /* remove WP block theme constrained widths inside about */
+}
+body.page-id-22 .about-layout > .wp-block-group__inner-container,
+body.page-id-22 .about-main > .wp-block-group__inner-container,
+body.page-id-22 .about-section > .wp-block-group__inner-container,
+body.page-template-template-about .about-layout > .wp-block-group__inner-container,
+body.page-template-template-about .about-main > .wp-block-group__inner-container,
+body.page-template-template-about .about-section > .wp-block-group__inner-container,
+body.page-template-template-about-php .about-layout > .wp-block-group__inner-container,
+body.page-template-template-about-php .about-main > .wp-block-group__inner-container,
+body.page-template-template-about-php .about-section > .wp-block-group__inner-container,
+body.page-template-about .about-layout > .wp-block-group__inner-container,
+body.page-template-about .about-main > .wp-block-group__inner-container,
+body.page-template-about .about-section > .wp-block-group__inner-container,
+body.page-template-about-php .about-layout > .wp-block-group__inner-container,
+body.page-template-about-php .about-main > .wp-block-group__inner-container,
+body.page-template-about-php .about-section > .wp-block-group__inner-container,
+body.page-slug-about-us-2 .about-layout > .wp-block-group__inner-container,
+body.page-slug-about-us-2 .about-main > .wp-block-group__inner-container,
+body.page-slug-about-us-2 .about-section > .wp-block-group__inner-container {
+  max-width: none;
+  width: 100%;
   margin: 0;
 }
-
-/*------------------------------
-  Community Focus – mobile
-------------------------------*/
-
-.about-community {
-  padding-top: 2.5rem;
-  border-top: 1px solid #ccc;
+body.page-id-22,
+body.page-template-template-about,
+body.page-template-template-about-php,
+body.page-template-about,
+body.page-template-about-php,
+body.page-slug-about-us-2 {
+  /* section wrapper */
 }
-
-/* Outer group around the plugin slider */
-.community-slider {
-  margin-top: 1.75rem;
+body.page-id-22 .about-section,
+body.page-template-template-about .about-section,
+body.page-template-template-about-php .about-section,
+body.page-template-about .about-section,
+body.page-template-about-php .about-section,
+body.page-slug-about-us-2 .about-section {
+  padding: 3rem 1.5rem;
 }
-
-/*===============================
-    ABOUT PAGE – DESKTOP
-    (>= 900px)
-================================*/
-
-@media (min-width: 900px) {
-
-  /* Sidebar + main side-by-side */
-  .about-layout {
-    display: flex;
-    gap: 2rem;
-  }
-
-  .about-sidebar {
-    flex: 0 0 260px;
-    margin-bottom: 0;
-  }
-
-  .about-main {
-    flex: 1;
-    padding: 2rem 2.5rem 3rem;
-  }
-
-  /* Our Story: make columns 2:1 */
-  .about-story .wp-block-columns {
-    display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
-    align-items: flex-start;
-    gap: 1.5rem;
-  }
-
-  /* Our Locations: two cards per row, limited width */
-  .locations-grid > .wp-block-group__inner-container {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(260px, 1fr));
-    gap: 1.5rem;
-    justify-items: center;
-  }
-
-  .location-card {
-    max-width: 480px;
-  }
+body.page-id-22 .about-section > .wp-block-group__inner-container,
+body.page-template-template-about .about-section > .wp-block-group__inner-container,
+body.page-template-template-about-php .about-section > .wp-block-group__inner-container,
+body.page-template-about .about-section > .wp-block-group__inner-container,
+body.page-template-about-php .about-section > .wp-block-group__inner-container,
+body.page-slug-about-us-2 .about-section > .wp-block-group__inner-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
 }
-
-/*===============================
-    Gslider Blocks basic safety
-================================*/
-
-/* Make sure the slider doesn’t overflow the container */
-.gslider-flexi-content-wrapper .swiper {
-  overflow: hidden;
+body.page-id-22 .about-section .wp-block-heading,
+body.page-template-template-about .about-section .wp-block-heading,
+body.page-template-template-about-php .about-section .wp-block-heading,
+body.page-template-about .about-section .wp-block-heading,
+body.page-template-about-php .about-section .wp-block-heading,
+body.page-slug-about-us-2 .about-section .wp-block-heading {
+  text-align: center;
+  margin: 0 0 1.5rem;
+  font-size: var(--font-2xl);
+  color: var(--off-black);
 }
-
-/* Ensure slides sit next to each other, not in one huge row with no control */
-.gslider-flexi-content-wrapper .swiper-wrapper {
-  display: flex;
+body.page-id-22,
+body.page-template-template-about,
+body.page-template-template-about-php,
+body.page-template-about,
+body.page-template-about-php,
+body.page-slug-about-us-2 {
+  /* OUR STORY */
 }
-
-/* Limit slide image width */
-.gslider-flexi-content-wrapper img {
-  max-width: 100%;
+body.page-id-22 .about-story,
+body.page-template-template-about .about-story,
+body.page-template-template-about-php .about-story,
+body.page-template-about .about-story,
+body.page-template-about-php .about-story,
+body.page-slug-about-us-2 .about-story {
+  background: var(--white);
+}
+body.page-id-22 .about-story .wp-block-columns,
+body.page-template-template-about .about-story .wp-block-columns,
+body.page-template-template-about-php .about-story .wp-block-columns,
+body.page-template-about .about-story .wp-block-columns,
+body.page-template-about-php .about-story .wp-block-columns,
+body.page-slug-about-us-2 .about-story .wp-block-columns {
+  margin: 0;
+  gap: 1.75rem;
+  align-items: center;
+}
+body.page-id-22 .about-story p,
+body.page-template-template-about .about-story p,
+body.page-template-template-about-php .about-story p,
+body.page-template-about .about-story p,
+body.page-template-about-php .about-story p,
+body.page-slug-about-us-2 .about-story p {
+  margin: 0 0 1rem;
+}
+body.page-id-22 .about-story .wp-block-image img,
+body.page-template-template-about .about-story .wp-block-image img,
+body.page-template-template-about-php .about-story .wp-block-image img,
+body.page-template-about .about-story .wp-block-image img,
+body.page-template-about-php .about-story .wp-block-image img,
+body.page-slug-about-us-2 .about-story .wp-block-image img {
+  width: 100%;
   height: auto;
   display: block;
+  border-radius: 10px;
 }
+body.page-id-22,
+body.page-template-template-about,
+body.page-template-template-about-php,
+body.page-template-about,
+body.page-template-about-php,
+body.page-slug-about-us-2 {
+  /* OUR LOCATIONS */
+}
+body.page-id-22 .about-locations,
+body.page-template-template-about .about-locations,
+body.page-template-template-about-php .about-locations,
+body.page-template-about .about-locations,
+body.page-template-about-php .about-locations,
+body.page-slug-about-us-2 .about-locations {
+  background: var(--red-700);
+}
+body.page-id-22 .about-locations .wp-block-heading,
+body.page-template-template-about .about-locations .wp-block-heading,
+body.page-template-template-about-php .about-locations .wp-block-heading,
+body.page-template-about .about-locations .wp-block-heading,
+body.page-template-about-php .about-locations .wp-block-heading,
+body.page-slug-about-us-2 .about-locations .wp-block-heading {
+  color: var(--white);
+}
+body.page-id-22 .about-locations .locations-grid > .wp-block-group__inner-container,
+body.page-template-template-about .about-locations .locations-grid > .wp-block-group__inner-container,
+body.page-template-template-about-php .about-locations .locations-grid > .wp-block-group__inner-container,
+body.page-template-about .about-locations .locations-grid > .wp-block-group__inner-container,
+body.page-template-about-php .about-locations .locations-grid > .wp-block-group__inner-container,
+body.page-slug-about-us-2 .about-locations .locations-grid > .wp-block-group__inner-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+body.page-id-22 .about-locations .location-card,
+body.page-template-template-about .about-locations .location-card,
+body.page-template-template-about-php .about-locations .location-card,
+body.page-template-about .about-locations .location-card,
+body.page-template-about-php .about-locations .location-card,
+body.page-slug-about-us-2 .about-locations .location-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.35);
+}
+body.page-id-22 .about-locations .location-card .wp-block-image img,
+body.page-template-template-about .about-locations .location-card .wp-block-image img,
+body.page-template-template-about-php .about-locations .location-card .wp-block-image img,
+body.page-template-about .about-locations .location-card .wp-block-image img,
+body.page-template-about-php .about-locations .location-card .wp-block-image img,
+body.page-slug-about-us-2 .about-locations .location-card .wp-block-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+}
+body.page-id-22 .about-locations .location-card .wp-block-heading,
+body.page-template-template-about .about-locations .location-card .wp-block-heading,
+body.page-template-template-about-php .about-locations .location-card .wp-block-heading,
+body.page-template-about .about-locations .location-card .wp-block-heading,
+body.page-template-about-php .about-locations .location-card .wp-block-heading,
+body.page-slug-about-us-2 .about-locations .location-card .wp-block-heading {
+  text-align: left;
+  color: var(--off-black);
+  font-size: var(--font-xl);
+  margin: 0.25rem 0 0.35rem;
+}
+body.page-id-22 .about-locations .location-card p,
+body.page-template-template-about .about-locations .location-card p,
+body.page-template-template-about-php .about-locations .location-card p,
+body.page-template-about .about-locations .location-card p,
+body.page-template-about-php .about-locations .location-card p,
+body.page-slug-about-us-2 .about-locations .location-card p {
+  margin: 0.25rem 0;
+  color: rgba(0, 0, 0, 0.75);
+}
+body.page-id-22 .about-locations .location-card code,
+body.page-template-template-about .about-locations .location-card code,
+body.page-template-template-about-php .about-locations .location-card code,
+body.page-template-about .about-locations .location-card code,
+body.page-template-about-php .about-locations .location-card code,
+body.page-slug-about-us-2 .about-locations .location-card code {
+  background: transparent;
+  padding: 0;
+  font-family: inherit;
+}
+body.page-id-22,
+body.page-template-template-about,
+body.page-template-template-about-php,
+body.page-template-about,
+body.page-template-about-php,
+body.page-slug-about-us-2 {
+  /* COMMUNITY */
+}
+body.page-id-22 .about-community,
+body.page-template-template-about .about-community,
+body.page-template-template-about-php .about-community,
+body.page-template-about .about-community,
+body.page-template-about-php .about-community,
+body.page-slug-about-us-2 .about-community {
+  background: var(--white);
+}
+body.page-id-22 .about-community p,
+body.page-template-template-about .about-community p,
+body.page-template-template-about-php .about-community p,
+body.page-template-about .about-community p,
+body.page-template-about-php .about-community p,
+body.page-slug-about-us-2 .about-community p {
+  margin: 0 0 1.5rem;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.65);
+}
+body.page-id-22 .about-community .community-slider,
+body.page-template-template-about .about-community .community-slider,
+body.page-template-template-about-php .about-community .community-slider,
+body.page-template-about .about-community .community-slider,
+body.page-template-about-php .about-community .community-slider,
+body.page-slug-about-us-2 .about-community .community-slider {
+  background: #f4f4f4;
+  border-radius: 10px;
+  min-height: 140px;
+}
+body.page-id-22,
+body.page-template-template-about,
+body.page-template-template-about-php,
+body.page-template-about,
+body.page-template-about-php,
+body.page-slug-about-us-2 {
+  /* ===============================
+     MEDIA QUERIES
+  =============================== */
+}
+@media (min-width: 768px) {
+  body.page-id-22 .hero-banner img,
+  body.page-template-template-about .hero-banner img,
+  body.page-template-template-about-php .hero-banner img,
+  body.page-template-about .hero-banner img,
+  body.page-template-about-php .hero-banner img,
+  body.page-slug-about-us-2 .hero-banner img {
+    height: 24rem;
+    min-height: 24rem;
+  }
+  body.page-id-22 .hero-banner__contact-page-title,
+  body.page-template-template-about .hero-banner__contact-page-title,
+  body.page-template-template-about-php .hero-banner__contact-page-title,
+  body.page-template-about .hero-banner__contact-page-title,
+  body.page-template-about-php .hero-banner__contact-page-title,
+  body.page-slug-about-us-2 .hero-banner__contact-page-title {
+    font-size: 3.25rem;
+  }
+  body.page-id-22 .about-locations .locations-grid > .wp-block-group__inner-container,
+  body.page-template-template-about .about-locations .locations-grid > .wp-block-group__inner-container,
+  body.page-template-template-about-php .about-locations .locations-grid > .wp-block-group__inner-container,
+  body.page-template-about .about-locations .locations-grid > .wp-block-group__inner-container,
+  body.page-template-about-php .about-locations .locations-grid > .wp-block-group__inner-container,
+  body.page-slug-about-us-2 .about-locations .locations-grid > .wp-block-group__inner-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  body.page-id-22 .hero-banner img,
+  body.page-template-template-about .hero-banner img,
+  body.page-template-template-about-php .hero-banner img,
+  body.page-template-about .hero-banner img,
+  body.page-template-about-php .hero-banner img,
+  body.page-slug-about-us-2 .hero-banner img {
+    height: 26rem;
+    min-height: 26rem;
+  }
+  body.page-id-22 .about-section,
+  body.page-template-template-about .about-section,
+  body.page-template-template-about-php .about-section,
+  body.page-template-about .about-section,
+  body.page-template-about-php .about-section,
+  body.page-slug-about-us-2 .about-section {
+    padding: 4rem 1.5rem;
+  }
+}
+
 /*===============================
-    (No extra rules for the slider plugin –
-    it uses its own CSS/JS)
+    Contact Page
 ================================*/
+.contact section.contact > .wp-block-group__inner-container {
+  max-width: var(--container-max-width);
+  margin: auto;
+  padding: 3rem 1.5rem;
+}
+.contact section.contact > .wp-block-group__inner-container .contact-heading {
+  color: var(--black);
+  font-size: var(--font-3xl);
+  margin-bottom: 3rem;
+}
+.contact section.contact .wp-block-group {
+  margin-bottom: 4rem;
+}
+.contact form {
+  border: 1px solid var(--red-100);
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  background-color: var(--white);
+}
+.contact form .forminator-error, .contact form .forminator-error-message {
+  color: var(--red-500);
+}
+.contact form .forminator-success {
+  color: var(--green-300);
+}
+.contact form .forminator-field {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.contact form .forminator-field .forminator-input, .contact form .forminator-field .forminator-select--field,
+.contact form .forminator-field .forminator-textarea, .contact form .forminator-field .forminator-button-submit {
+  border: 1px solid var(--red-100);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+.contact form .forminator-field .forminator-button-submit {
+  color: var(--off-white);
+  background-color: var(--red-700);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  gap: 0.5rem;
+}
+.contact form .forminator-field .forminator-button-submit::before {
+  content: "";
+  width: 22px;
+  height: 19px;
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 19' fill='none'%3E%3Cpath d='M7.724 9.015.75 2.885A59.8 59.8 0 0 1 20.916.907a59.8 59.8 0 0 1-10.871 17.098zm0 0 6.39-3.927' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/*===============================
+    Footer
+================================*/
+.site-footer {
+  padding: 3.5rem 1.5rem;
+  color: var(--white);
+  background-color: var(--red-950);
+  margin-bottom: -1.5rem;
+}
+.site-footer__card-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 6rem;
+  margin-bottom: 3rem;
+}
+.site-footer__card-title {
+  font-size: var(--font-2xl);
+}
+.site-footer__card-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.site-footer__card-svg {
+  min-width: 1.75rem;
+  max-width: 1.75rem;
+  height: 1.75rem;
+}
+.site-footer__card-svg--sns {
+  margin-bottom: 0.5rem;
+}
+.site-footer__copyright {
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.site-footer a.site-footer__card-text.site-footer__card-text--sns-link {
+  color: var(--white);
+}
+
+.site-footer a.site-footer__card-text.site-footer__card-text--sns-link:hover {
+  color: var(--off-white-hover);
+}
+
+/*===============================
+    Media Query
+================================*/
+@media screen and (min-width: 37.5em) {
+  .site-header__container {
+    position: relative;
+  }
+  .site-header .main-navigation .menu {
+    display: flex;
+    gap: 2rem;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero-banner__title {
+    font-size: var(--font-5xl);
+    max-width: 37rem;
+  }
+  .hero-banner__text-container {
+    padding: 3.5rem 2rem;
+  }
+  .hero-banner__cta-container {
+    flex-direction: row;
+  }
+  .hero-banner__contact-page-title {
+    font-size: var(--font-5xl);
+  }
+  .home section.why-choose-us > .wp-block-group__inner-container > .why-choose-us-heading {
+    text-align: center;
+    font-size: var(--font-4xl);
+    margin-bottom: 4rem;
+  }
+  .home section.why-choose-us > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container {
+    flex-flow: row wrap;
+    text-align: center;
+  }
+  .home section.why-choose-us > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container .card {
+    width: calc((100% - 5rem) / 2);
+    position: relative;
+  }
+  .home section.why-choose-us > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container .card .wp-block-image {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .home section.current-promotions {
+    padding: 3rem 1.5rem 5rem;
+  }
+  .home section.current-promotions > .wp-block-group__inner-container > .current-promotions-heading {
+    text-align: center;
+    font-size: var(--font-4xl);
+    margin-bottom: 4rem;
+  }
+  .home section.current-promotions > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container {
+    flex-flow: row wrap;
+  }
+  .home section.current-promotions > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container .card {
+    width: calc((100% - 1.75rem) / 2);
+  }
+  .home section.review {
+    padding: 3rem 1.5rem 5rem;
+  }
+  .home section.review > .wp-block-group__inner-container > .review-heading {
+    text-align: center;
+    font-size: var(--font-4xl);
+    margin-bottom: 4rem;
+  }
+  .home section.review > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container {
+    flex-flow: row wrap;
+  }
+  .home section.review > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container .card {
+    width: calc((100% - 1.75rem) / 2);
+  }
+  .home section.event-inquiry > .wp-block-group__inner-container {
+    flex-flow: row wrap;
+  }
+  .home section.event-inquiry > .wp-block-group__inner-container .event-inquiry-text {
+    width: calc((100% - 1.75rem) / 2);
+    order: 1;
+  }
+  .home section.event-inquiry > .wp-block-group__inner-container .event-inquiry-text .inquiry-heading {
+    font-size: var(--font-4xl);
+    margin-bottom: 4rem;
+  }
+  .home section.event-inquiry > .wp-block-group__inner-container .wp-block-image {
+    order: 2;
+    width: calc((100% - 1.75rem) / 2);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .site-footer__card-container {
+    flex-flow: row wrap;
+    margin-bottom: 6rem;
+  }
+  .contact section.contact > .wp-block-group__inner-container {
+    display: flex;
+    gap: 5rem;
+  }
+  .contact section.contact > .wp-block-group__inner-container .contact-heading {
+    font-size: var(--font-4xl);
+    margin-bottom: 4rem;
+  }
+  .contact section.contact > .wp-block-group__inner-container .wp-block-group {
+    flex: 0 1 45ch;
+  }
+  .contact section.contact > .wp-block-group__inner-container form.forminator-ui {
+    flex: 1;
+  }
+}
+@media screen and (min-width: 1232px) {
+  .hero-banner__text-inner-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .home section.why-choose-us > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container .card {
+    width: calc((100% - 9rem) / 4);
+  }
+  .home section.current-promotions > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container .card {
+    width: calc((100% - 3.5rem) / 3);
+  }
+  .home section.review > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container .card {
+    width: calc((100% - 3.5rem) / 3);
+  }
+}/*# sourceMappingURL=custom.css.map */

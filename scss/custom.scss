@@ -4,15 +4,23 @@
 
 :root {
     /* Color */
-    --off-white: #F4F1F1;
+    --white: #ffffff;
+    --black: #000000;
+    --off-white: #F9F7F5;
+    --off-white-hover: #E2DDD8;
     --off-black: #1A0005;
     --background-color-grey: #d6d6d6;
-    --background-color-light-grey: #f4f4f4;
-    --red-900: #3E0A14;
+    --red-950: #230E12;
+    --red-900: #33141A;
     --red-700: #651021;
     --red-500: #84152B;
     --red-300: #B7162C;
+    --red-300-hover: #C63A4B;
+    --red-100: #957474;
     --blue-300: #2176C0;
+    --green-900: #2B3427;
+    --green-300: #0a7a4b;
+    --yellow-500: #F2C101;
 
     /* Font Size */
 
@@ -29,6 +37,9 @@
     --font-4xl:  2.25rem;     /* 36px | h2 / h1 (mobile) */
     --font-5xl:  3rem;        /* 48px | h1 (desktop) */
     --font-6xl:  3.75rem;     /* 60px | hero (desktop only) */
+
+    /* Container */
+    --container-max-width: 1232px;
 }
 
 /*===============================
@@ -45,18 +56,38 @@ body {
     font-weight: 400;
     font-style: normal;
     line-height: 1.6;
-}
-
-.site-main {
-    background-color: var(--background-color-grey);
-    width: 100%;
-    padding: 2rem;
+    background-color: var(--off-white);
 }
 
 .container {
-    max-width: 1200px;
-    background-color: var(--background-color-light-grey);
+    max-width: var(--container-max-width);
     margin: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*===============================
+    Mixin
+================================*/
+
+@mixin section-header-mobile {
+    font-size: var(--font-3xl);
+    margin-bottom: 3rem;
+}
+
+@mixin section-header-desktop {
+    font-size: var(--font-4xl);
+    margin-bottom: 4rem;
+}
+
+@mixin button-style {
+    color: var(--white);
+    font-size: var(--font-base);
+    background-color: var(--red-300);
+    padding: 1rem 2rem;
+    border-radius: 6px;
 }
 
 /*===============================
@@ -76,43 +107,780 @@ h3, h4 {
 
 /*===============================
     Header
-    
 ================================*/
 
 .site-header {
-    
+    position: relative;
+    background-color: var(--off-white);
+    padding: 2rem 1.5rem;
+    &__toggle-btn{
+        position: absolute;
+        top: 2rem;
+        right: 1.5rem;
+        background-color: transparent;
+        border: none;
+    }
+    &__svg{
+        width: 2.75rem;
+        height: 2.75rem;
+    }
+    .main-navigation{
+        .menu-item{
+            padding: 0.5rem 0;
+        }
+        a {
+            color: var(--red-300);
+            &:hover{
+                color: var(--red-300-hover);
+            }
+        }
+    }
 }
+
+
+/*===============================
+    Hero Banner
+================================*/
+
+.hero-banner {
+    position: relative;
+    box-shadow: 0 18px 40px -18px rgba(0,0,0,0.55);
+    img{
+        width: 100%;
+        min-height: 32rem;
+        display: block;
+        margin: auto;
+        object-fit: cover;
+    }
+    &__text-container{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 3.5rem 1.5rem;
+    }
+    &__title{
+        color: var(--red-300);
+        font-size: var(--font-3xl);
+        line-height: 1;
+        text-transform: uppercase;
+    }
+    &__contact-page-title{
+        color: var(--white);
+        font-size: var(--font-3xl);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &__subtitle{
+        color: var(--white);
+        font-size: var(--font-xl);
+    }
+    &__cta-container{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+    &__cta{
+        @include button-style;
+    }
+}
+
+// CTA button font color (this increases the specificity to apply style)
+a.hero-banner__cta {
+    color: var(--white);
+}
+
 
 /*===============================
     Home Page
 ================================*/
-.home {
 
+.home {
+    // Why Choose Us Section
+    section.why-choose-us{
+        color: var(--green-900);
+        padding: 3rem 1.5rem; 
+        & > .wp-block-group__inner-container{
+            max-width: var(--container-max-width);
+            margin: auto;
+            & > .why-choose-us-heading{
+                color: var(--red-900);
+                @include section-header-mobile;
+            }
+            .card-container{
+                & > .wp-block-group__inner-container{
+                    display: flex;
+                    flex-flow: column nowrap;
+                    gap: 3rem;
+                    .card{
+                        .wp-block-image{
+                            width: 40px;
+                        }
+                        .wp-block-heading{
+                            font-size: var(--font-2xl);
+                            color: var(--black);
+                            text-transform: uppercase;
+                            font-weight: 700;
+                        }
+                        a{
+                            color: var(--blue-300);
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // Current Promotions Section
+    section.current-promotions{
+        color: var(--black);
+        padding: 3rem 1.5rem;
+        & > .wp-block-group__inner-container{
+            max-width: var(--container-max-width);
+            margin: auto;
+            & > .current-promotions-heading{
+                color: var(--red-900);
+                @include section-header-mobile;
+            }
+            .card-container{
+                margin-bottom: 4rem;
+                & > .wp-block-group__inner-container{
+                    display: flex;
+                    flex-flow: column nowrap;
+                    gap: 1.75rem;
+                    .card{
+                        padding: 1rem;
+                        border: 2px solid var(--red-700);
+                        background-color: var(--white);
+                        border-radius: 10px;
+                        .wp-block-heading{
+                            color: var(--black);
+                            font-size: var(--font-2xl);
+                            text-transform: uppercase;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+            .sns-heading {
+                text-align: center;
+                font-size: var(--font-2xl);
+                color: var(--blue-300);
+                & + .wp-block-group {
+                    .wp-block-group__inner-container{
+                        display: flex;
+                        justify-content: center;
+                        gap: 3.75rem;
+                    }
+                }
+            }
+        }
+    }
+    // Review Section
+    section.review{
+        background-color: var(--red-700);
+        color: var(--red-700);
+        padding: 3rem 1.5rem;
+        & > .wp-block-group__inner-container{
+            max-width: var(--container-max-width);
+            margin: auto;
+            & > .review-heading{
+                color: var(--off-white);
+                @include section-header-mobile;
+            }
+            .card-container{
+                & > .wp-block-group__inner-container{
+                    display: flex;
+                    flex-flow: column nowrap;
+                    gap: 1.75rem;
+                    .card{
+                        padding: 1rem;
+                        background-color: var(--off-white);
+                        border-radius: 10px;
+                        box-shadow: 0 18px 40px -18px rgba(0,0,0,0.55);
+                        .stars{
+                            color: var(--yellow-500);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // Event Inquiry Section
+    section.event-inquiry{
+        color: var(--black);
+        padding: 3rem 1.5rem;
+        & > .wp-block-group__inner-container{
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 1.75rem;
+            max-width: var(--container-max-width);
+            margin: auto;
+            .event-inquiry-text{
+                .inquiry-heading{
+                    color: var(--red-900);
+                    @include section-header-mobile;
+                    & + p {
+                        margin-bottom: 5rem;
+                    }
+                }
+                a{
+                    @include button-style;
+                }
+            }
+            .wp-block-image{
+                img{
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
 }
 
 /*===============================
-    About Page
+  ABOUT PAGE
 ================================*/
-.about {
 
+body.page-id-22,
+body.page-template-template-about,
+body.page-template-template-about-php,
+body.page-template-about,
+body.page-template-about-php,
+body.page-slug-about-us-2 {
+
+ 
+  #secondary {
+    display: none;
+  }
+
+ 
+  .entry-header,
+  .entry-title,
+  .post-thumbnail {
+    display: none;
+  }
+
+  
+  .site-main.about {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ===============================
+     HERO
+  =============================== */
+
+  .hero-banner {
+    position: relative;
+    overflow: hidden;
+    box-shadow: none; 
+
+    img {
+      width: 100%;
+      height: 20rem;      
+      min-height: 20rem;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 1;
+    }
+
+    &__text-container {
+      position: absolute;
+      inset: 0;
+      padding: 3.5rem 1.5rem;
+      z-index: 2;
+    }
+
+    &__contact-page-title {
+      color: var(--white);
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      white-space: normal;
+      text-transform: none; 
+    }
+  }
+
+  .about-layout,
+  .about-main,
+  .about-section {
+    > .wp-block-group__inner-container {
+      max-width: none;
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  /* section wrapper */
+  .about-section {
+    padding: 3rem 1.5rem;
+
+    > .wp-block-group__inner-container {
+      max-width: var(--container-max-width);
+      margin: 0 auto;
+    }
+
+    .wp-block-heading {
+      text-align: center;
+      margin: 0 0 1.5rem;
+      font-size: var(--font-2xl);
+      color: var(--off-black);
+    }
+  }
+
+  /* OUR STORY */
+  .about-story {
+    background: var(--white);
+
+    .wp-block-columns {
+      margin: 0;
+      gap: 1.75rem;
+      align-items: center;
+    }
+
+    p {
+      margin: 0 0 1rem;
+    }
+
+    .wp-block-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+  }
+
+  /* OUR LOCATIONS */
+  .about-locations {
+    background: var(--red-700);
+
+    .wp-block-heading {
+      color: var(--white);
+    }
+
+    .locations-grid > .wp-block-group__inner-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .location-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.35);
+
+      .wp-block-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 10px;
+        margin-bottom: 0.75rem;
+      }
+
+      .wp-block-heading {
+        text-align: left;
+        color: var(--off-black);
+        font-size: var(--font-xl);
+        margin: 0.25rem 0 0.35rem;
+      }
+
+      p {
+        margin: 0.25rem 0;
+        color: rgba(0, 0, 0, 0.75);
+      }
+
+      code {
+        background: transparent;
+        padding: 0;
+        font-family: inherit;
+      }
+    }
+  }
+
+  /* COMMUNITY */
+  .about-community {
+    background: var(--white);
+
+    p {
+      margin: 0 0 1.5rem;
+      text-align: center;
+      color: rgba(0, 0, 0, 0.65);
+    }
+
+    .community-slider {
+      background: #f4f4f4;
+      border-radius: 10px;
+      min-height: 140px;
+    }
+  }
+
+  /* ===============================
+     MEDIA QUERIES
+  =============================== */
+
+  @media (min-width: 768px) {
+    .hero-banner img {
+      height: 24rem;
+      min-height: 24rem;
+    }
+
+    .hero-banner__contact-page-title {
+      font-size: 3.25rem;
+    }
+
+    .about-locations .locations-grid > .wp-block-group__inner-container {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-banner img {
+      height: 26rem;
+      min-height: 26rem;
+    }
+
+    .about-section {
+      padding: 4rem 1.5rem;
+    }
+  }
 }
-
 /*===============================
     Contact Page
 ================================*/
 .contact {
-
+    section.contact{
+        & > .wp-block-group__inner-container {
+            max-width: var(--container-max-width);
+            margin: auto;
+            padding: 3rem 1.5rem;
+            & .contact-heading{
+                color: var(--black);
+                @include section-header-mobile;
+            }
+        }
+        .wp-block-group{
+            margin-bottom: 4rem;
+        }
+    }
+    form{
+        border: 1px solid var(--red-100);
+        border-radius: 8px;
+        padding: 1.5rem 1rem;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1rem;
+        background-color: var(--white);
+            .forminator-error,.forminator-error-message{
+                color: var(--red-500);
+            }
+            .forminator-success{
+                color: var(--green-300);
+            }
+        .forminator-field{
+            display: flex;
+            flex-flow: column nowrap;
+            .forminator-input,.forminator-select--field,
+            .forminator-textarea,.forminator-button-submit {
+                border: 1px solid var(--red-100);
+                padding: 0.5rem 1rem;
+                border-radius: 8px;
+            }
+            .forminator-button-submit{
+                color: var(--off-white);
+                background-color: var(--red-700);
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-items: center;
+                height: 3rem;
+                gap: 0.5rem;
+                &::before{
+                    content: "";
+                width: 22px;
+                height: 19px;
+                display: inline-block;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 19' fill='none'%3E%3Cpath d='M7.724 9.015.75 2.885A59.8 59.8 0 0 1 20.916.907a59.8 59.8 0 0 1-10.871 17.098zm0 0 6.39-3.927' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                background-size: contain;
+                background-repeat: no-repeat;
+                }
+            }
+        }
+        
+    }
 }
 
 /*===============================
     Footer
 ================================*/
 
-.footer {
-    
+.site-footer {
+    padding: 3.5rem 1.5rem;
+    color: var(--white);
+    background-color: var(--red-950);
+    margin-bottom: -1.5rem; // This deletes the gap under the footer bottom
+    &__card-container{
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 6rem;
+        margin-bottom: 3rem;
+    }
+    &__card-title{
+        font-size: var(--font-2xl);
+    }
+    &__card-item{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    &__card-svg{
+        min-width: 1.75rem;
+        max-width: 1.75rem;
+        height: 1.75rem;
+        &--sns{
+            margin-bottom: 0.5rem;
+        }
+    }
+    &__copyright{
+        text-transform: capitalize;
+        text-align: center;
+    }
+}
+
+.site-footer a.site-footer__card-text.site-footer__card-text--sns-link{
+    color: var(--white);
+}
+
+.site-footer a.site-footer__card-text.site-footer__card-text--sns-link:hover{
+    color: var(--off-white-hover);
 }
 
 /*===============================
     Media Query
 ================================*/
+// (≥ 600px)
+@media screen and (min-width: 37.5em) {
+    .site-header{
+        &__container{
+            position: relative;
+        }
+        .main-navigation{
+            .menu{
+                display: flex;
+                gap: 2rem;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+            }
+        }
+    }
+    // Jas's part - start
+    // About Page Code
 
+
+    // Jas's part - end
+}
+
+// Tablet (≥ 768px)
+@media screen and (min-width: 768px) {
+    .hero-banner{
+        &__title{
+            font-size: var(--font-5xl);
+            max-width: 37rem;
+        }
+        &__text-container{
+            padding: 3.5rem 2rem;
+        }
+        &__cta-container{
+            flex-direction: row;
+        }
+        &__contact-page-title{
+            font-size: var(--font-5xl);
+        }
+    }
+    .home {
+        section.why-choose-us{
+            & > .wp-block-group__inner-container{
+                & > .why-choose-us-heading{
+                    text-align: center;
+                    @include section-header-desktop;
+                }
+                .card-container{
+                    & > .wp-block-group__inner-container{
+                        flex-flow: row wrap;
+                        text-align: center;
+                        .card{
+                            width: calc((100% - 5rem) / 2);
+                            position: relative;
+                            .wp-block-image{
+                                position: relative;
+                                left: 50%;
+                                transform: translateX(-50%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        section.current-promotions{
+            padding: 3rem 1.5rem 5rem;
+            & > .wp-block-group__inner-container{
+                & > .current-promotions-heading{
+                    text-align: center;
+                    @include section-header-desktop;
+                }
+                .card-container{
+                    & > .wp-block-group__inner-container{
+                        flex-flow: row wrap;
+                        .card{
+                            width: calc((100% - 1.75rem) / 2);
+                        }
+                    }
+                }
+            }
+        }
+        section.review{
+            padding: 3rem 1.5rem 5rem;
+            & > .wp-block-group__inner-container{
+                & > .review-heading{
+                    text-align: center;
+                    @include section-header-desktop;
+                }
+                .card-container{
+                    & > .wp-block-group__inner-container{
+                        flex-flow: row wrap;
+                        .card{
+                            width: calc((100% - 1.75rem) / 2);
+                        }
+                    }
+                }
+            }
+        }
+        section.event-inquiry{
+        & > .wp-block-group__inner-container{
+            flex-flow: row wrap;
+            .event-inquiry-text{
+                width: calc((100% - 1.75rem) / 2);
+                order: 1;
+                .inquiry-heading{
+                    @include section-header-desktop;
+                }
+            }
+            .wp-block-image{
+                order: 2;
+                width: calc((100% - 1.75rem) / 2);
+            }
+        }
+    }
+    }
+    // Jas's part - start
+    // About Page Code
+
+    
+    // Jas's part - end
+}
+
+// Desktop (≥ 1024px)
+@media screen and (min-width: 1024px) {
+    .site-footer{
+        &__card-container{
+            flex-flow: row wrap;
+            margin-bottom: 6rem;
+        }
+    }
+    
+    // Jas's part - start
+    // About Page Code
+
+    
+    // Jas's part - end
+    .contact{
+        section.contact{
+            & > .wp-block-group__inner-container{
+                display: flex;
+                gap: 5rem;
+                & .contact-heading{
+                    @include section-header-desktop();
+                }
+                .wp-block-group{
+                    flex: 0 1 45ch;
+                }
+                form.forminator-ui{
+                    flex: 1;
+                }
+            }
+        }
+    }
+}
+
+// Reset left and right padding at the maximum container width
+@media screen and (min-width: 1232px) {
+    .hero-banner{
+            &__text-inner-container{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    .home {
+        section.why-choose-us{
+            & > .wp-block-group__inner-container{
+                .card-container{
+                    & > .wp-block-group__inner-container{
+                        .card{
+                            width: calc((100% - 9rem) / 4);
+                        }
+                    }
+                }
+            }
+        }
+        section.current-promotions{
+            & > .wp-block-group__inner-container{
+                .card-container{
+                    & > .wp-block-group__inner-container{
+                        .card{
+                            width: calc((100% - 3.5rem) / 3);
+                        }
+                    }
+                }
+            }
+        }
+        section.review{
+            & > .wp-block-group__inner-container{
+                .card-container{
+                    & > .wp-block-group__inner-container{
+                        .card{
+                            width: calc((100% - 3.5rem) / 3);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    // Jas's part - start
+    // About Page Code
+
+    
+    // Jas's part - end
+}
