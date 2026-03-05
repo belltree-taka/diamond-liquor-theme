@@ -120,7 +120,12 @@ h3, h4 {
   min-height: 32rem;
   display: block;
   margin: auto;
+<<<<<<< HEAD
+  -o-object-fit: cover;
+     object-fit: cover;
+=======
   object-fit: cover;
+>>>>>>> main
 }
 .hero-banner__text-container {
   position: absolute;
@@ -302,8 +307,445 @@ a.hero-banner__cta {
 }
 
 /*===============================
-    About Page
+  ABOUT PAGE
 ================================*/
+body.page-id-22,
+body.page-template-template-about,
+body.page-template-template-about-php,
+body.page-template-about,
+body.page-template-about-php,
+body.page-slug-about-us-2 {
+  /* remove theme sidebar widgets if theme outputs them */
+}
+body.page-id-22 #secondary,
+body.page-template-template-about #secondary,
+body.page-template-template-about-php #secondary,
+body.page-template-about #secondary,
+body.page-template-about-php #secondary,
+body.page-slug-about-us-2 #secondary {
+  display: none;
+}
+body.page-id-22,
+body.page-template-template-about,
+body.page-template-template-about-php,
+body.page-template-about,
+body.page-template-about-php,
+body.page-slug-about-us-2 {
+  /* remove default WP title/header output if theme still prints it */
+}
+body.page-id-22 .entry-header,
+body.page-id-22 .entry-title,
+body.page-id-22 .post-thumbnail,
+body.page-template-template-about .entry-header,
+body.page-template-template-about .entry-title,
+body.page-template-template-about .post-thumbnail,
+body.page-template-template-about-php .entry-header,
+body.page-template-template-about-php .entry-title,
+body.page-template-template-about-php .post-thumbnail,
+body.page-template-about .entry-header,
+body.page-template-about .entry-title,
+body.page-template-about .post-thumbnail,
+body.page-template-about-php .entry-header,
+body.page-template-about-php .entry-title,
+body.page-template-about-php .post-thumbnail,
+body.page-slug-about-us-2 .entry-header,
+body.page-slug-about-us-2 .entry-title,
+body.page-slug-about-us-2 .post-thumbnail {
+  display: none;
+}
+body.page-id-22,
+body.page-template-template-about,
+body.page-template-template-about-php,
+body.page-template-about,
+body.page-template-about-php,
+body.page-slug-about-us-2 {
+  /* make About page full width (no container constraint) */
+}
+body.page-id-22 .site-main.about,
+body.page-template-template-about .site-main.about,
+body.page-template-template-about-php .site-main.about,
+body.page-template-about .site-main.about,
+body.page-template-about-php .site-main.about,
+body.page-slug-about-us-2 .site-main.about {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+body.page-id-22,
+body.page-template-template-about,
+body.page-template-template-about-php,
+body.page-template-about,
+body.page-template-about-php,
+body.page-slug-about-us-2 {
+  /* ===============================
+     HERO
+  =============================== */
+}
+body.page-id-22 .hero-banner,
+body.page-template-template-about .hero-banner,
+body.page-template-template-about-php .hero-banner,
+body.page-template-about .hero-banner,
+body.page-template-about-php .hero-banner,
+body.page-slug-about-us-2 .hero-banner {
+  position: relative;
+  overflow: hidden;
+  box-shadow: none; /* remove homepage heavy shadow */
+}
+body.page-id-22 .hero-banner img,
+body.page-template-template-about .hero-banner img,
+body.page-template-template-about-php .hero-banner img,
+body.page-template-about .hero-banner img,
+body.page-template-about-php .hero-banner img,
+body.page-slug-about-us-2 .hero-banner img {
+  width: 100%;
+  height: 20rem; /* SHORTER hero */
+  min-height: 20rem;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+body.page-id-22 .hero-banner,
+body.page-template-template-about .hero-banner,
+body.page-template-template-about-php .hero-banner,
+body.page-template-about .hero-banner,
+body.page-template-about-php .hero-banner,
+body.page-slug-about-us-2 .hero-banner {
+  /* lighter overlay (screenshot look) */
+}
+body.page-id-22 .hero-banner::before,
+body.page-template-template-about .hero-banner::before,
+body.page-template-template-about-php .hero-banner::before,
+body.page-template-about .hero-banner::before,
+body.page-template-about-php .hero-banner::before,
+body.page-slug-about-us-2 .hero-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+body.page-id-22 .hero-banner__text-container,
+body.page-template-template-about .hero-banner__text-container,
+body.page-template-template-about-php .hero-banner__text-container,
+body.page-template-about .hero-banner__text-container,
+body.page-template-about-php .hero-banner__text-container,
+body.page-slug-about-us-2 .hero-banner__text-container {
+  position: absolute;
+  inset: 0;
+  padding: 3.5rem 1.5rem;
+  z-index: 2;
+}
+body.page-id-22 .hero-banner__contact-page-title,
+body.page-template-template-about .hero-banner__contact-page-title,
+body.page-template-template-about-php .hero-banner__contact-page-title,
+body.page-template-about .hero-banner__contact-page-title,
+body.page-template-about-php .hero-banner__contact-page-title,
+body.page-slug-about-us-2 .hero-banner__contact-page-title {
+  color: var(--white);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  white-space: normal;
+  text-transform: none; /* normal case like screenshot */
+}
+body.page-id-22,
+body.page-template-template-about,
+body.page-template-template-about-php,
+body.page-template-about,
+body.page-template-about-php,
+body.page-slug-about-us-2 {
+  /* remove WP block theme constrained widths inside about */
+}
+body.page-id-22 .about-layout > .wp-block-group__inner-container,
+body.page-id-22 .about-main > .wp-block-group__inner-container,
+body.page-id-22 .about-section > .wp-block-group__inner-container,
+body.page-template-template-about .about-layout > .wp-block-group__inner-container,
+body.page-template-template-about .about-main > .wp-block-group__inner-container,
+body.page-template-template-about .about-section > .wp-block-group__inner-container,
+body.page-template-template-about-php .about-layout > .wp-block-group__inner-container,
+body.page-template-template-about-php .about-main > .wp-block-group__inner-container,
+body.page-template-template-about-php .about-section > .wp-block-group__inner-container,
+body.page-template-about .about-layout > .wp-block-group__inner-container,
+body.page-template-about .about-main > .wp-block-group__inner-container,
+body.page-template-about .about-section > .wp-block-group__inner-container,
+body.page-template-about-php .about-layout > .wp-block-group__inner-container,
+body.page-template-about-php .about-main > .wp-block-group__inner-container,
+body.page-template-about-php .about-section > .wp-block-group__inner-container,
+body.page-slug-about-us-2 .about-layout > .wp-block-group__inner-container,
+body.page-slug-about-us-2 .about-main > .wp-block-group__inner-container,
+body.page-slug-about-us-2 .about-section > .wp-block-group__inner-container {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+}
+body.page-id-22,
+body.page-template-template-about,
+body.page-template-template-about-php,
+body.page-template-about,
+body.page-template-about-php,
+body.page-slug-about-us-2 {
+  /* section wrapper */
+}
+body.page-id-22 .about-section,
+body.page-template-template-about .about-section,
+body.page-template-template-about-php .about-section,
+body.page-template-about .about-section,
+body.page-template-about-php .about-section,
+body.page-slug-about-us-2 .about-section {
+  padding: 3rem 1.5rem;
+}
+body.page-id-22 .about-section > .wp-block-group__inner-container,
+body.page-template-template-about .about-section > .wp-block-group__inner-container,
+body.page-template-template-about-php .about-section > .wp-block-group__inner-container,
+body.page-template-about .about-section > .wp-block-group__inner-container,
+body.page-template-about-php .about-section > .wp-block-group__inner-container,
+body.page-slug-about-us-2 .about-section > .wp-block-group__inner-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+body.page-id-22 .about-section .wp-block-heading,
+body.page-template-template-about .about-section .wp-block-heading,
+body.page-template-template-about-php .about-section .wp-block-heading,
+body.page-template-about .about-section .wp-block-heading,
+body.page-template-about-php .about-section .wp-block-heading,
+body.page-slug-about-us-2 .about-section .wp-block-heading {
+  text-align: center;
+  margin: 0 0 1.5rem;
+  font-size: var(--font-2xl);
+  color: var(--off-black);
+}
+body.page-id-22,
+body.page-template-template-about,
+body.page-template-template-about-php,
+body.page-template-about,
+body.page-template-about-php,
+body.page-slug-about-us-2 {
+  /* OUR STORY */
+}
+body.page-id-22 .about-story,
+body.page-template-template-about .about-story,
+body.page-template-template-about-php .about-story,
+body.page-template-about .about-story,
+body.page-template-about-php .about-story,
+body.page-slug-about-us-2 .about-story {
+  background: var(--white);
+}
+body.page-id-22 .about-story .wp-block-columns,
+body.page-template-template-about .about-story .wp-block-columns,
+body.page-template-template-about-php .about-story .wp-block-columns,
+body.page-template-about .about-story .wp-block-columns,
+body.page-template-about-php .about-story .wp-block-columns,
+body.page-slug-about-us-2 .about-story .wp-block-columns {
+  margin: 0;
+  gap: 1.75rem;
+  align-items: center;
+}
+body.page-id-22 .about-story p,
+body.page-template-template-about .about-story p,
+body.page-template-template-about-php .about-story p,
+body.page-template-about .about-story p,
+body.page-template-about-php .about-story p,
+body.page-slug-about-us-2 .about-story p {
+  margin: 0 0 1rem;
+}
+body.page-id-22 .about-story .wp-block-image img,
+body.page-template-template-about .about-story .wp-block-image img,
+body.page-template-template-about-php .about-story .wp-block-image img,
+body.page-template-about .about-story .wp-block-image img,
+body.page-template-about-php .about-story .wp-block-image img,
+body.page-slug-about-us-2 .about-story .wp-block-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+body.page-id-22,
+body.page-template-template-about,
+body.page-template-template-about-php,
+body.page-template-about,
+body.page-template-about-php,
+body.page-slug-about-us-2 {
+  /* OUR LOCATIONS */
+}
+body.page-id-22 .about-locations,
+body.page-template-template-about .about-locations,
+body.page-template-template-about-php .about-locations,
+body.page-template-about .about-locations,
+body.page-template-about-php .about-locations,
+body.page-slug-about-us-2 .about-locations {
+  background: var(--red-700);
+}
+body.page-id-22 .about-locations .wp-block-heading,
+body.page-template-template-about .about-locations .wp-block-heading,
+body.page-template-template-about-php .about-locations .wp-block-heading,
+body.page-template-about .about-locations .wp-block-heading,
+body.page-template-about-php .about-locations .wp-block-heading,
+body.page-slug-about-us-2 .about-locations .wp-block-heading {
+  color: var(--white);
+}
+body.page-id-22 .about-locations .locations-grid > .wp-block-group__inner-container,
+body.page-template-template-about .about-locations .locations-grid > .wp-block-group__inner-container,
+body.page-template-template-about-php .about-locations .locations-grid > .wp-block-group__inner-container,
+body.page-template-about .about-locations .locations-grid > .wp-block-group__inner-container,
+body.page-template-about-php .about-locations .locations-grid > .wp-block-group__inner-container,
+body.page-slug-about-us-2 .about-locations .locations-grid > .wp-block-group__inner-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+body.page-id-22 .about-locations .location-card,
+body.page-template-template-about .about-locations .location-card,
+body.page-template-template-about-php .about-locations .location-card,
+body.page-template-about .about-locations .location-card,
+body.page-template-about-php .about-locations .location-card,
+body.page-slug-about-us-2 .about-locations .location-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.35);
+}
+body.page-id-22 .about-locations .location-card .wp-block-image img,
+body.page-template-template-about .about-locations .location-card .wp-block-image img,
+body.page-template-template-about-php .about-locations .location-card .wp-block-image img,
+body.page-template-about .about-locations .location-card .wp-block-image img,
+body.page-template-about-php .about-locations .location-card .wp-block-image img,
+body.page-slug-about-us-2 .about-locations .location-card .wp-block-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+}
+body.page-id-22 .about-locations .location-card .wp-block-heading,
+body.page-template-template-about .about-locations .location-card .wp-block-heading,
+body.page-template-template-about-php .about-locations .location-card .wp-block-heading,
+body.page-template-about .about-locations .location-card .wp-block-heading,
+body.page-template-about-php .about-locations .location-card .wp-block-heading,
+body.page-slug-about-us-2 .about-locations .location-card .wp-block-heading {
+  text-align: left;
+  color: var(--off-black);
+  font-size: var(--font-xl);
+  margin: 0.25rem 0 0.35rem;
+}
+body.page-id-22 .about-locations .location-card p,
+body.page-template-template-about .about-locations .location-card p,
+body.page-template-template-about-php .about-locations .location-card p,
+body.page-template-about .about-locations .location-card p,
+body.page-template-about-php .about-locations .location-card p,
+body.page-slug-about-us-2 .about-locations .location-card p {
+  margin: 0.25rem 0;
+  color: rgba(0, 0, 0, 0.75);
+}
+body.page-id-22 .about-locations .location-card code,
+body.page-template-template-about .about-locations .location-card code,
+body.page-template-template-about-php .about-locations .location-card code,
+body.page-template-about .about-locations .location-card code,
+body.page-template-about-php .about-locations .location-card code,
+body.page-slug-about-us-2 .about-locations .location-card code {
+  background: transparent;
+  padding: 0;
+  font-family: inherit;
+}
+body.page-id-22,
+body.page-template-template-about,
+body.page-template-template-about-php,
+body.page-template-about,
+body.page-template-about-php,
+body.page-slug-about-us-2 {
+  /* COMMUNITY */
+}
+body.page-id-22 .about-community,
+body.page-template-template-about .about-community,
+body.page-template-template-about-php .about-community,
+body.page-template-about .about-community,
+body.page-template-about-php .about-community,
+body.page-slug-about-us-2 .about-community {
+  background: var(--white);
+}
+body.page-id-22 .about-community p,
+body.page-template-template-about .about-community p,
+body.page-template-template-about-php .about-community p,
+body.page-template-about .about-community p,
+body.page-template-about-php .about-community p,
+body.page-slug-about-us-2 .about-community p {
+  margin: 0 0 1.5rem;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.65);
+}
+body.page-id-22 .about-community .community-slider,
+body.page-template-template-about .about-community .community-slider,
+body.page-template-template-about-php .about-community .community-slider,
+body.page-template-about .about-community .community-slider,
+body.page-template-about-php .about-community .community-slider,
+body.page-slug-about-us-2 .about-community .community-slider {
+  background: #f4f4f4;
+  border-radius: 10px;
+  min-height: 140px;
+}
+body.page-id-22,
+body.page-template-template-about,
+body.page-template-template-about-php,
+body.page-template-about,
+body.page-template-about-php,
+body.page-slug-about-us-2 {
+  /* ===============================
+     MEDIA QUERIES
+  =============================== */
+}
+@media (min-width: 768px) {
+  body.page-id-22 .hero-banner img,
+  body.page-template-template-about .hero-banner img,
+  body.page-template-template-about-php .hero-banner img,
+  body.page-template-about .hero-banner img,
+  body.page-template-about-php .hero-banner img,
+  body.page-slug-about-us-2 .hero-banner img {
+    height: 24rem;
+    min-height: 24rem;
+  }
+  body.page-id-22 .hero-banner__contact-page-title,
+  body.page-template-template-about .hero-banner__contact-page-title,
+  body.page-template-template-about-php .hero-banner__contact-page-title,
+  body.page-template-about .hero-banner__contact-page-title,
+  body.page-template-about-php .hero-banner__contact-page-title,
+  body.page-slug-about-us-2 .hero-banner__contact-page-title {
+    font-size: 3.25rem;
+  }
+  body.page-id-22 .about-locations .locations-grid > .wp-block-group__inner-container,
+  body.page-template-template-about .about-locations .locations-grid > .wp-block-group__inner-container,
+  body.page-template-template-about-php .about-locations .locations-grid > .wp-block-group__inner-container,
+  body.page-template-about .about-locations .locations-grid > .wp-block-group__inner-container,
+  body.page-template-about-php .about-locations .locations-grid > .wp-block-group__inner-container,
+  body.page-slug-about-us-2 .about-locations .locations-grid > .wp-block-group__inner-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  body.page-id-22 .hero-banner img,
+  body.page-template-template-about .hero-banner img,
+  body.page-template-template-about-php .hero-banner img,
+  body.page-template-about .hero-banner img,
+  body.page-template-about-php .hero-banner img,
+  body.page-slug-about-us-2 .hero-banner img {
+    height: 26rem;
+    min-height: 26rem;
+  }
+  body.page-id-22 .about-section,
+  body.page-template-template-about .about-section,
+  body.page-template-template-about-php .about-section,
+  body.page-template-about .about-section,
+  body.page-template-about-php .about-section,
+  body.page-slug-about-us-2 .about-section {
+    padding: 4rem 1.5rem;
+  }
+}
+
 /*===============================
     Contact Page
 ================================*/
