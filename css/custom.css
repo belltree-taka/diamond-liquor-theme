@@ -120,12 +120,8 @@ h3, h4 {
   min-height: 32rem;
   display: block;
   margin: auto;
-<<<<<<< HEAD
   -o-object-fit: cover;
      object-fit: cover;
-=======
-  object-fit: cover;
->>>>>>> main
 }
 .hero-banner__text-container {
   position: absolute;
@@ -309,14 +305,6 @@ a.hero-banner__cta {
 /*===============================
   ABOUT PAGE
 ================================*/
-body.page-id-22,
-body.page-template-template-about,
-body.page-template-template-about-php,
-body.page-template-about,
-body.page-template-about-php,
-body.page-slug-about-us-2 {
-  /* remove theme sidebar widgets if theme outputs them */
-}
 body.page-id-22 #secondary,
 body.page-template-template-about #secondary,
 body.page-template-template-about-php #secondary,
@@ -324,14 +312,6 @@ body.page-template-about #secondary,
 body.page-template-about-php #secondary,
 body.page-slug-about-us-2 #secondary {
   display: none;
-}
-body.page-id-22,
-body.page-template-template-about,
-body.page-template-template-about-php,
-body.page-template-about,
-body.page-template-about-php,
-body.page-slug-about-us-2 {
-  /* remove default WP title/header output if theme still prints it */
 }
 body.page-id-22 .entry-header,
 body.page-id-22 .entry-title,
@@ -352,14 +332,6 @@ body.page-slug-about-us-2 .entry-header,
 body.page-slug-about-us-2 .entry-title,
 body.page-slug-about-us-2 .post-thumbnail {
   display: none;
-}
-body.page-id-22,
-body.page-template-template-about,
-body.page-template-template-about-php,
-body.page-template-about,
-body.page-template-about-php,
-body.page-slug-about-us-2 {
-  /* make About page full width (no container constraint) */
 }
 body.page-id-22 .site-main.about,
 body.page-template-template-about .site-main.about,
@@ -389,7 +361,7 @@ body.page-template-about-php .hero-banner,
 body.page-slug-about-us-2 .hero-banner {
   position: relative;
   overflow: hidden;
-  box-shadow: none; /* remove homepage heavy shadow */
+  box-shadow: none;
 }
 body.page-id-22 .hero-banner img,
 body.page-template-template-about .hero-banner img,
@@ -398,21 +370,13 @@ body.page-template-about .hero-banner img,
 body.page-template-about-php .hero-banner img,
 body.page-slug-about-us-2 .hero-banner img {
   width: 100%;
-  height: 20rem; /* SHORTER hero */
+  height: 20rem;
   min-height: 20rem;
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-}
-body.page-id-22 .hero-banner,
-body.page-template-template-about .hero-banner,
-body.page-template-template-about-php .hero-banner,
-body.page-template-about .hero-banner,
-body.page-template-about-php .hero-banner,
-body.page-slug-about-us-2 .hero-banner {
-  /* lighter overlay (screenshot look) */
 }
 body.page-id-22 .hero-banner::before,
 body.page-template-template-about .hero-banner::before,
@@ -453,15 +417,7 @@ body.page-slug-about-us-2 .hero-banner__contact-page-title {
   transform: translate(-50%, -50%);
   text-align: center;
   white-space: normal;
-  text-transform: none; /* normal case like screenshot */
-}
-body.page-id-22,
-body.page-template-template-about,
-body.page-template-template-about-php,
-body.page-template-about,
-body.page-template-about-php,
-body.page-slug-about-us-2 {
-  /* remove WP block theme constrained widths inside about */
+  text-transform: none;
 }
 body.page-id-22 .about-layout > .wp-block-group__inner-container,
 body.page-id-22 .about-main > .wp-block-group__inner-container,
