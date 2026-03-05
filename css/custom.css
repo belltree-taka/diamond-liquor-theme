@@ -120,8 +120,12 @@ h3, h4 {
   min-height: 32rem;
   display: block;
   margin: auto;
+<<<<<<< HEAD
   -o-object-fit: cover;
      object-fit: cover;
+=======
+  object-fit: cover;
+>>>>>>> main
 }
 .hero-banner__text-container {
   position: absolute;

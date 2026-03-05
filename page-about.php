@@ -6,6 +6,12 @@ get_header();
 
 ?>
 
+<<<<<<< HEAD
+=======
+	<main id="primary" class="site-main about">
+		<?php the_content();?>
+	</main>
+>>>>>>> main
 
 <section class="hero-banner">
   <?php the_post_thumbnail('full'); ?>

@@ -341,9 +341,11 @@ a.hero-banner__cta {
     }
 }
 
+
 /*===============================
   ABOUT PAGE
 ================================*/
+<<<<<<< HEAD
 
 body.page-id-22,
 body.page-template-template-about,
@@ -563,6 +565,21 @@ body.page-slug-about-us-2 {
     }
   }
 }
+=======
+// Jas's part - start
+
+.about {
+    
+}
+
+
+
+
+
+
+// Jas's part - end
+
+>>>>>>> main
 /*===============================
     Contact Page
 ================================*/
@@ -695,6 +712,198 @@ body.page-slug-about-us-2 {
     }
     // Jas's part - start
     // About Page Code
+<<<<<<< HEAD
+=======
+
+
+    // Jas's part - end
+}
+
+// Tablet (≥ 768px)
+@media screen and (min-width: 768px) {
+    .hero-banner{
+        &__title{
+            font-size: var(--font-5xl);
+            max-width: 37rem;
+        }
+        &__text-container{
+            padding: 3.5rem 2rem;
+        }
+        &__cta-container{
+            flex-direction: row;
+        }
+        &__contact-page-title{
+            font-size: var(--font-5xl);
+        }
+    }
+    .home {
+        section.why-choose-us{
+            & > .wp-block-group__inner-container{
+                & > .why-choose-us-heading{
+                    text-align: center;
+                    @include section-header-desktop;
+                }
+                .card-container{
+                    & > .wp-block-group__inner-container{
+                        flex-flow: row wrap;
+                        text-align: center;
+                        .card{
+                            width: calc((100% - 5rem) / 2);
+                            position: relative;
+                            .wp-block-image{
+                                position: relative;
+                                left: 50%;
+                                transform: translateX(-50%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        section.current-promotions{
+            padding: 3rem 1.5rem 5rem;
+            & > .wp-block-group__inner-container{
+                & > .current-promotions-heading{
+                    text-align: center;
+                    @include section-header-desktop;
+                }
+                .card-container{
+                    & > .wp-block-group__inner-container{
+                        flex-flow: row wrap;
+                        .card{
+                            width: calc((100% - 1.75rem) / 2);
+                        }
+                    }
+                }
+            }
+        }
+        section.review{
+            padding: 3rem 1.5rem 5rem;
+            & > .wp-block-group__inner-container{
+                & > .review-heading{
+                    text-align: center;
+                    @include section-header-desktop;
+                }
+                .card-container{
+                    & > .wp-block-group__inner-container{
+                        flex-flow: row wrap;
+                        .card{
+                            width: calc((100% - 1.75rem) / 2);
+                        }
+                    }
+                }
+            }
+        }
+        section.event-inquiry{
+        & > .wp-block-group__inner-container{
+            flex-flow: row wrap;
+            .event-inquiry-text{
+                width: calc((100% - 1.75rem) / 2);
+                order: 1;
+                .inquiry-heading{
+                    @include section-header-desktop;
+                }
+            }
+            .wp-block-image{
+                order: 2;
+                width: calc((100% - 1.75rem) / 2);
+            }
+        }
+    }
+    }
+    // Jas's part - start
+    // About Page Code
+
+    
+    // Jas's part - end
+}
+
+// Desktop (≥ 1024px)
+@media screen and (min-width: 1024px) {
+    .site-footer{
+        &__card-container{
+            flex-flow: row wrap;
+            margin-bottom: 6rem;
+        }
+    }
+    
+    // Jas's part - start
+    // About Page Code
+
+    
+    // Jas's part - end
+    .contact{
+        section.contact{
+            & > .wp-block-group__inner-container{
+                display: flex;
+                gap: 5rem;
+                & .contact-heading{
+                    @include section-header-desktop();
+                }
+                .wp-block-group{
+                    flex: 0 1 45ch;
+                }
+                form.forminator-ui{
+                    flex: 1;
+                }
+            }
+        }
+    }
+}
+
+// Reset left and right padding at the maximum container width
+@media screen and (min-width: 1232px) {
+    .hero-banner{
+            &__text-inner-container{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    .home {
+        section.why-choose-us{
+            & > .wp-block-group__inner-container{
+                .card-container{
+                    & > .wp-block-group__inner-container{
+                        .card{
+                            width: calc((100% - 9rem) / 4);
+                        }
+                    }
+                }
+            }
+        }
+        section.current-promotions{
+            & > .wp-block-group__inner-container{
+                .card-container{
+                    & > .wp-block-group__inner-container{
+                        .card{
+                            width: calc((100% - 3.5rem) / 3);
+                        }
+                    }
+                }
+            }
+        }
+        section.review{
+            & > .wp-block-group__inner-container{
+                .card-container{
+                    & > .wp-block-group__inner-container{
+                        .card{
+                            width: calc((100% - 3.5rem) / 3);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    // Jas's part - start
+    // About Page Code
+
+    
+    // Jas's part - end
+}
+>>>>>>> main
 
 
     // Jas's part - end
