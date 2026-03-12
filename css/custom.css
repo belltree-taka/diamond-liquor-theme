@@ -618,18 +618,13 @@ a.hero-banner__cta {
     margin-bottom: 6rem;
   }
   .contact section.contact > .wp-block-group__inner-container {
-    flex-flow: row wrap;
+    display: grid;
+    grid-template-columns: 45ch 1fr;
     gap: 5rem;
   }
   .contact section.contact > .wp-block-group__inner-container .contact-heading {
     font-size: var(--font-4xl);
     margin-bottom: 4rem;
-  }
-  .contact section.contact > .wp-block-group__inner-container .wp-block-group {
-    flex: 0 1 45ch;
-  }
-  .contact section.contact > .wp-block-group__inner-container form.forminator-ui {
-    flex: 1;
   }
 }
 @media screen and (min-width: 1232px) {

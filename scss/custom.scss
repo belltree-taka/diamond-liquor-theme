@@ -715,16 +715,12 @@ a.hero-banner__cta {
     .contact{
         section.contact{
             & > .wp-block-group__inner-container{
-                flex-flow: row wrap;
-                gap: 5rem;
+                // Grid is utilized to fix the layout shift caused by Bluehost environment
+                display:grid;
+                grid-template-columns:45ch 1fr;
+                gap:5rem;
                 & .contact-heading{
-                    @include section-header-desktop();
-                }
-                .wp-block-group{
-                    flex: 0 1 45ch;
-                }
-                form.forminator-ui{
-                    flex: 1;
+                    @include section-header-desktop;
                 }
             }
         }
