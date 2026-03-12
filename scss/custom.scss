@@ -59,6 +59,7 @@ body {
     background-color: var(--off-white);
 }
 
+// This container class is used only for header and footer
 .container {
     max-width: var(--container-max-width);
     margin: auto;
@@ -88,6 +89,11 @@ a {
     background-color: var(--red-300);
     padding: 1rem 2rem;
     border-radius: 6px;
+}
+
+@mixin container-style {
+    max-width: var(--container-max-width);
+    margin: auto;
 }
 
 /*===============================
@@ -137,7 +143,6 @@ h3, h4 {
     }
 }
 
-
 /*===============================
     Hero Banner
 ================================*/
@@ -151,6 +156,18 @@ h3, h4 {
         display: block;
         margin: auto;
         object-fit: cover;
+    }
+    &--about{
+        img{
+            min-height: unset;
+            max-height: 25rem;
+        }
+    }
+    &--contact{
+        img{
+            min-height: unset;
+            max-height: 25rem;
+        }
     }
     &__text-container{
         position: absolute;
@@ -170,7 +187,15 @@ h3, h4 {
         color: var(--white);
         font-size: var(--font-3xl);
         position: absolute;
-        top: 50%;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &__about-page-title{
+        color: var(--white);
+        font-size: var(--font-3xl);
+        position: absolute;
+        top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
@@ -194,7 +219,6 @@ a.hero-banner__cta {
     color: var(--white);
 }
 
-
 /*===============================
     Home Page
 ================================*/
@@ -205,8 +229,7 @@ a.hero-banner__cta {
         color: var(--green-900);
         padding: 3rem 1.5rem; 
         & > .wp-block-group__inner-container{
-            max-width: var(--container-max-width);
-            margin: auto;
+            @include container-style;
             & > .why-choose-us-heading{
                 color: var(--red-900);
                 @include section-header-mobile;
@@ -240,8 +263,7 @@ a.hero-banner__cta {
         color: var(--black);
         padding: 3rem 1.5rem;
         & > .wp-block-group__inner-container{
-            max-width: var(--container-max-width);
-            margin: auto;
+            @include container-style;
             & > .current-promotions-heading{
                 color: var(--red-900);
                 @include section-header-mobile;
@@ -286,8 +308,7 @@ a.hero-banner__cta {
         color: var(--red-700);
         padding: 3rem 1.5rem;
         & > .wp-block-group__inner-container{
-            max-width: var(--container-max-width);
-            margin: auto;
+            @include container-style;
             & > .review-heading{
                 color: var(--off-white);
                 @include section-header-mobile;
@@ -315,11 +336,10 @@ a.hero-banner__cta {
         color: var(--black);
         padding: 3rem 1.5rem;
         & > .wp-block-group__inner-container{
+            @include container-style;
             display: flex;
             flex-flow: column nowrap;
             gap: 1.75rem;
-            max-width: var(--container-max-width);
-            margin: auto;
             .event-inquiry-text{
                 .inquiry-heading{
                     color: var(--red-900);
@@ -341,133 +361,84 @@ a.hero-banner__cta {
     }
 }
 
-
 /*===============================
   ABOUT PAGE
 ================================*/
 
-
-
-
-
-
-
-  /* OUR STORY */
-  .about-story {
-    background: var(--white);
-
-    .wp-block-columns {
-      margin: 0;
-      gap: 1.75rem;
-      align-items: center;
+.about {
+    // Our Story Section
+    section.our-story{
+        color: var(--black); 
+        padding: 3rem 1.5rem;
+        & > .wp-block-group__inner-container{
+            .our-story-heading{
+                @include section-header-mobile;
+                @include container-style;
+                & + .wp-block-group{
+                    & > .wp-block-group__inner-container{
+                        @include container-style;
+                        display: flex;
+                        flex-flow: column nowrap;
+                        gap: 3.5rem;
+                    }
+                }
+            }
+        }
     }
-
-    p {
-      margin: 0 0 1rem;
+    // Our Location Section
+    section.our-locations{
+        background-color: var(--red-700);
+        color: var(--black);
+        padding: 3rem 1.5rem;
+        & > .wp-block-group__inner-container{
+            @include container-style;
+            .our-locations-heading{
+                @include section-header-mobile;
+                color: var(--white);
+            }
+            & > .location-card-container{
+                & > .wp-block-group__inner-container{
+                    display: flex;
+                    flex-flow: column nowrap;
+                    gap: 3.5rem;
+                }
+                .location-card {
+                    background-color: var(--off-white);
+                    padding: 1rem 2rem;
+                    border-radius: 5px;
+                    .wp-block-group__inner-container{
+                        .wp-block-heading{
+                            color: var(--black);
+                            font-size: var(--font-2xl);
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
     }
-
-    .wp-block-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 10px;
+    // Community Focus Section
+    section.community-foucs{
+        color: var(--black);
+        padding: 3rem 1.5rem;
+        & > .wp-block-group__inner-container{
+            @include container-style;
+            .community-focus-heading{
+                @include section-header-mobile;
+            }
+        }
     }
-  }
-
-  /* OUR LOCATIONS */
-  .about-locations {
-    background: var(--red-700);
-
-    .wp-block-heading {
-      color: var(--white);
+    section.community-foucs{
+        div.gs_logo_single{
+            border: 1px solid var(--red-700);
+            background-color: var(--white);
+            .gs_logo_title{
+                color: var(--red-700);
+                font-weight: 600;
+            }
+        }
     }
-
-    .locations-grid > .wp-block-group__inner-container {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-
-    .location-card {
-      background: var(--white);
-      border-radius: 10px;
-      padding: 1rem;
-      box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.35);
-
-      .wp-block-image img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 10px;
-        margin-bottom: 0.75rem;
-      }
-
-      .wp-block-heading {
-        text-align: left;
-        color: var(--off-black);
-        font-size: var(--font-xl);
-        margin: 0.25rem 0 0.35rem;
-      }
-
-      p {
-        margin: 0.25rem 0;
-        color: rgba(0, 0, 0, 0.75);
-      }
-
-      code {
-        background: transparent;
-        padding: 0;
-        font-family: inherit;
-      }
-    }
-  }
-
-  /* COMMUNITY */
-  .about-community {
-    background: var(--white);
-
-    p {
-      margin: 0 0 1.5rem;
-      text-align: center;
-      color: rgba(0, 0, 0, 0.65);
-    }
-
-    .community-slider {
-      background: #f4f4f4;
-      border-radius: 10px;
-      min-height: 140px;
-    }
-  }
-
-  /* ===============================
-     MEDIA QUERIES
-  =============================== */
-
-  @media (min-width: 768px) {
-    .hero-banner img {
-      height: 24rem;
-      min-height: 24rem;
-    }
-
-    .hero-banner__contact-page-title {
-      font-size: 3.25rem;
-    }
-
-    .about-locations .locations-grid > .wp-block-group__inner-container {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .hero-banner img {
-      height: 26rem;
-      min-height: 26rem;
-    }
-
-    .about-section {
-      padding: 4rem 1.5rem;
-    }
-  }
+}
 
 /*===============================
     Contact Page
@@ -475,9 +446,10 @@ a.hero-banner__cta {
 .contact {
     section.contact{
         & > .wp-block-group__inner-container {
-            max-width: var(--container-max-width);
-            margin: auto;
+            @include container-style;
             padding: 3rem 1.5rem;
+            display: flex;
+            flex-flow: column nowrap;
             & .contact-heading{
                 color: var(--black);
                 @include section-header-mobile;
@@ -486,51 +458,53 @@ a.hero-banner__cta {
         .wp-block-group{
             margin-bottom: 4rem;
         }
-    }
-    form{
-        border: 1px solid var(--red-100);
-        border-radius: 8px;
-        padding: 1.5rem 1rem;
-        display: flex;
-        flex-flow: column nowrap;
-        gap: 1rem;
-        background-color: var(--white);
+        form{
+            border: 1px solid var(--red-100);
+            border-radius: 8px;
+            padding: 1.5rem 1rem;
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 1rem;
+            background-color: var(--white);
             .forminator-error,.forminator-error-message{
                 color: var(--red-500);
             }
             .forminator-success{
                 color: var(--green-300);
             }
-        .forminator-field{
-            display: flex;
-            flex-flow: column nowrap;
-            .forminator-input,.forminator-select--field,
-            .forminator-textarea,.forminator-button-submit {
-                border: 1px solid var(--red-100);
-                padding: 0.5rem 1rem;
-                border-radius: 8px;
-            }
-            .forminator-button-submit{
-                color: var(--off-white);
-                background-color: var(--red-700);
+            .forminator-field{
                 display: flex;
-                flex-flow: row nowrap;
-                justify-content: center;
-                align-items: center;
-                height: 3rem;
-                gap: 0.5rem;
-                &::before{
-                    content: "";
-                width: 22px;
-                height: 19px;
-                display: inline-block;
-                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 19' fill='none'%3E%3Cpath d='M7.724 9.015.75 2.885A59.8 59.8 0 0 1 20.916.907a59.8 59.8 0 0 1-10.871 17.098zm0 0 6.39-3.927' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-                background-size: contain;
-                background-repeat: no-repeat;
+                flex-flow: column nowrap;
+                .forminator-input,.forminator-select--field,
+                .forminator-textarea,.forminator-button-submit {
+                    border: 1px solid var(--red-100);
+                    padding: 0.5rem 1rem;
+                    border-radius: 8px;
+                }
+                .forminator-button-submit{
+                    color: var(--off-white);
+                    background-color: var(--red-700);
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: center;
+                    align-items: center;
+                    height: 3rem;
+                    gap: 0.5rem;
+                    &::before{
+                        content: "";
+                    width: 22px;
+                    height: 19px;
+                    display: inline-block;
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 19' fill='none'%3E%3Cpath d='M7.724 9.015.75 2.885A59.8 59.8 0 0 1 20.916.907a59.8 59.8 0 0 1-10.871 17.098zm0 0 6.39-3.927' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    }
                 }
             }
         }
-        
+        div.forminator-edit-module{
+            display: none;
+        }
     }
 }
 
@@ -599,11 +573,6 @@ a.hero-banner__cta {
             }
         }
     }
-    // Jas's part - start
-    // About Page Code
-
-
-    // Jas's part - end
 }
 
 // Tablet (≥ 768px)
@@ -618,6 +587,9 @@ a.hero-banner__cta {
         }
         &__cta-container{
             flex-direction: row;
+        }
+        &__about-page-title{
+            font-size: var(--font-5xl);
         }
         &__contact-page-title{
             font-size: var(--font-5xl);
@@ -696,9 +668,40 @@ a.hero-banner__cta {
                 width: calc((100% - 1.75rem) / 2);
             }
         }
+        }
     }
+    .about {
+        section.our-story{
+            & > .wp-block-group__inner-container{
+                .our-story-heading{
+                    @include section-header-desktop;
+                    & + .wp-block-group{
+                        & > .wp-block-group__inner-container{
+                            flex-flow: row nowrap;
+                            .wp-block-image{
+                                order: 1;
+                            }
+                            .wp-block-group{
+                                order: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        section.our-locations{
+            & > .wp-block-group__inner-container{
+                .our-locations-heading{
+                    @include section-header-desktop;
+                }
+                & > .location-card-container{
+                    & > .wp-block-group__inner-container{
+                        flex-flow: row nowrap;
+                    }
+                }
+            }
+        }
     }
-  
 }
 
 // Desktop (≥ 1024px)
@@ -709,12 +712,10 @@ a.hero-banner__cta {
             margin-bottom: 6rem;
         }
     }
-    
-  
     .contact{
         section.contact{
             & > .wp-block-group__inner-container{
-                display: flex;
+                flex-flow: row wrap;
                 gap: 5rem;
                 & .contact-heading{
                     @include section-header-desktop();
@@ -774,7 +775,4 @@ a.hero-banner__cta {
             }
         }
     }
-    
-    
-
 }
