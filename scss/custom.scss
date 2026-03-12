@@ -715,7 +715,7 @@ a.hero-banner__cta {
     .contact{
         section.contact{
             & > .wp-block-group__inner-container{
-                // Grid is utilized to fix the layout shift caused by Bluehost environment
+                // Grid is utilized to fix the layout shift caused by Bluehost
                 display:grid;
                 grid-template-columns:45ch 1fr;
                 gap:5rem;
