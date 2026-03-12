@@ -1,10 +1,7 @@
 <?php
-
-/*
-Template Name: About
-*/
-
 get_header();
+
+while ( have_posts() ) : the_post();
 ?>
 	<section class="hero-banner hero-banner--about">
 		<?php the_post_thumbnail('full'); ?>
@@ -15,4 +12,6 @@ get_header();
 	</main>
 
 <?php
+endwhile;
+
 get_footer();
