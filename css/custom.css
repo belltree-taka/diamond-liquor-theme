@@ -122,6 +122,14 @@ h3, h4 {
   margin: auto;
   object-fit: cover;
 }
+.hero-banner--about img {
+  min-height: unset;
+  max-height: 25rem;
+}
+.hero-banner--contact img {
+  min-height: unset;
+  max-height: 25rem;
+}
 .hero-banner__text-container {
   position: absolute;
   top: 0;
@@ -140,7 +148,15 @@ h3, h4 {
   color: var(--white);
   font-size: var(--font-3xl);
   position: absolute;
-  top: 50%;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hero-banner__about-page-title {
+  color: var(--white);
+  font-size: var(--font-3xl);
+  position: absolute;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -276,11 +292,11 @@ a.hero-banner__cta {
   padding: 3rem 1.5rem;
 }
 .home section.event-inquiry > .wp-block-group__inner-container {
+  max-width: var(--container-max-width);
+  margin: auto;
   display: flex;
   flex-flow: column nowrap;
   gap: 1.75rem;
-  max-width: var(--container-max-width);
-  margin: auto;
 }
 .home section.event-inquiry > .wp-block-group__inner-container .event-inquiry-text .inquiry-heading {
   color: var(--red-900);
@@ -304,6 +320,73 @@ a.hero-banner__cta {
 /*===============================
     About Page
 ================================*/
+.about section.our-story {
+  color: var(--black);
+  padding: 3rem 1.5rem;
+}
+.about section.our-story > .wp-block-group__inner-container .our-story-heading {
+  font-size: var(--font-3xl);
+  margin-bottom: 3rem;
+  max-width: var(--container-max-width);
+  margin: auto;
+}
+.about section.our-story > .wp-block-group__inner-container .our-story-heading + .wp-block-group > .wp-block-group__inner-container {
+  max-width: var(--container-max-width);
+  margin: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 3.5rem;
+}
+.about section.our-locations {
+  background-color: var(--red-700);
+  color: var(--black);
+  padding: 3rem 1.5rem;
+}
+.about section.our-locations > .wp-block-group__inner-container {
+  max-width: var(--container-max-width);
+  margin: auto;
+}
+.about section.our-locations > .wp-block-group__inner-container .our-locations-heading {
+  font-size: var(--font-3xl);
+  margin-bottom: 3rem;
+  color: var(--white);
+}
+.about section.our-locations > .wp-block-group__inner-container > .location-card-container > .wp-block-group__inner-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 3.5rem;
+}
+.about section.our-locations > .wp-block-group__inner-container > .location-card-container .location-card {
+  background-color: var(--off-white);
+  padding: 1rem 2rem;
+  border-radius: 5px;
+}
+.about section.our-locations > .wp-block-group__inner-container > .location-card-container .location-card .wp-block-group__inner-container .wp-block-heading {
+  color: var(--black);
+  font-size: var(--font-2xl);
+  font-weight: 700;
+}
+.about section.community-foucs {
+  color: var(--black);
+  padding: 3rem 1.5rem;
+}
+.about section.community-foucs > .wp-block-group__inner-container {
+  max-width: var(--container-max-width);
+  margin: auto;
+}
+.about section.community-foucs > .wp-block-group__inner-container .community-focus-heading {
+  font-size: var(--font-3xl);
+  margin-bottom: 3rem;
+}
+.about section.community-foucs div.gs_logo_single {
+  border: 1px solid var(--red-700);
+  background-color: var(--white);
+}
+.about section.community-foucs div.gs_logo_single .gs_logo_title {
+  color: var(--red-700);
+  font-weight: 600;
+}
+
 /*===============================
     Contact Page
 ================================*/
@@ -311,6 +394,8 @@ a.hero-banner__cta {
   max-width: var(--container-max-width);
   margin: auto;
   padding: 3rem 1.5rem;
+  display: flex;
+  flex-flow: column nowrap;
 }
 .contact section.contact > .wp-block-group__inner-container .contact-heading {
   color: var(--black);
@@ -320,7 +405,7 @@ a.hero-banner__cta {
 .contact section.contact .wp-block-group {
   margin-bottom: 4rem;
 }
-.contact form {
+.contact section.contact form {
   border: 1px solid var(--red-100);
   border-radius: 8px;
   padding: 1.5rem 1rem;
@@ -329,23 +414,23 @@ a.hero-banner__cta {
   gap: 1rem;
   background-color: var(--white);
 }
-.contact form .forminator-error, .contact form .forminator-error-message {
+.contact section.contact form .forminator-error, .contact section.contact form .forminator-error-message {
   color: var(--red-500);
 }
-.contact form .forminator-success {
+.contact section.contact form .forminator-success {
   color: var(--green-300);
 }
-.contact form .forminator-field {
+.contact section.contact form .forminator-field {
   display: flex;
   flex-flow: column nowrap;
 }
-.contact form .forminator-field .forminator-input, .contact form .forminator-field .forminator-select--field,
-.contact form .forminator-field .forminator-textarea, .contact form .forminator-field .forminator-button-submit {
+.contact section.contact form .forminator-field .forminator-input, .contact section.contact form .forminator-field .forminator-select--field,
+.contact section.contact form .forminator-field .forminator-textarea, .contact section.contact form .forminator-field .forminator-button-submit {
   border: 1px solid var(--red-100);
   padding: 0.5rem 1rem;
   border-radius: 8px;
 }
-.contact form .forminator-field .forminator-button-submit {
+.contact section.contact form .forminator-field .forminator-button-submit {
   color: var(--off-white);
   background-color: var(--red-700);
   display: flex;
@@ -355,7 +440,7 @@ a.hero-banner__cta {
   height: 3rem;
   gap: 0.5rem;
 }
-.contact form .forminator-field .forminator-button-submit::before {
+.contact section.contact form .forminator-field .forminator-button-submit::before {
   content: "";
   width: 22px;
   height: 19px;
@@ -363,6 +448,9 @@ a.hero-banner__cta {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 19' fill='none'%3E%3Cpath d='M7.724 9.015.75 2.885A59.8 59.8 0 0 1 20.916.907a59.8 59.8 0 0 1-10.871 17.098zm0 0 6.39-3.927' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
+}
+.contact section.contact div.forminator-edit-module {
+  display: none;
 }
 
 /*===============================
@@ -436,6 +524,9 @@ a.hero-banner__cta {
   .hero-banner__cta-container {
     flex-direction: row;
   }
+  .hero-banner__about-page-title {
+    font-size: var(--font-5xl);
+  }
   .hero-banner__contact-page-title {
     font-size: var(--font-5xl);
   }
@@ -500,6 +591,26 @@ a.hero-banner__cta {
     order: 2;
     width: calc((100% - 1.75rem) / 2);
   }
+  .about section.our-story > .wp-block-group__inner-container .our-story-heading {
+    font-size: var(--font-4xl);
+    margin-bottom: 4rem;
+  }
+  .about section.our-story > .wp-block-group__inner-container .our-story-heading + .wp-block-group > .wp-block-group__inner-container {
+    flex-flow: row nowrap;
+  }
+  .about section.our-story > .wp-block-group__inner-container .our-story-heading + .wp-block-group > .wp-block-group__inner-container .wp-block-image {
+    order: 1;
+  }
+  .about section.our-story > .wp-block-group__inner-container .our-story-heading + .wp-block-group > .wp-block-group__inner-container .wp-block-group {
+    order: 0;
+  }
+  .about section.our-locations > .wp-block-group__inner-container .our-locations-heading {
+    font-size: var(--font-4xl);
+    margin-bottom: 4rem;
+  }
+  .about section.our-locations > .wp-block-group__inner-container > .location-card-container > .wp-block-group__inner-container {
+    flex-flow: row nowrap;
+  }
 }
 @media screen and (min-width: 1024px) {
   .site-footer__card-container {
@@ -507,7 +618,7 @@ a.hero-banner__cta {
     margin-bottom: 6rem;
   }
   .contact section.contact > .wp-block-group__inner-container {
-    display: flex;
+    flex-flow: row wrap;
     gap: 5rem;
   }
   .contact section.contact > .wp-block-group__inner-container .contact-heading {
