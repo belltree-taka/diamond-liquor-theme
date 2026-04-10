@@ -318,7 +318,7 @@ a.hero-banner__cta {
 }
 
 /*===============================
-  ABOUT PAGE
+    ABOUT PAGE
 ================================*/
 .about section.our-story {
   color: var(--black);
@@ -609,7 +609,10 @@ a.hero-banner__cta {
     margin-bottom: 4rem;
   }
   .about section.our-locations > .wp-block-group__inner-container > .location-card-container > .wp-block-group__inner-container {
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
+  }
+  .about section.our-locations > .wp-block-group__inner-container > .location-card-container .location-card {
+    width: calc((100% - 3.5rem) / 2);
   }
 }
 @media screen and (min-width: 1024px) {

@@ -362,7 +362,7 @@ a.hero-banner__cta {
 }
 
 /*===============================
-  ABOUT PAGE
+    ABOUT PAGE
 ================================*/
 
 .about {
@@ -696,7 +696,10 @@ a.hero-banner__cta {
                 }
                 & > .location-card-container{
                     & > .wp-block-group__inner-container{
-                        flex-flow: row nowrap;
+                        flex-flow: row wrap;
+                    }
+                    .location-card{
+                        width: calc((100% - 3.5rem) / 2);
                     }
                 }
             }
