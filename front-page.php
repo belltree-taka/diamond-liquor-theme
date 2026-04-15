@@ -18,7 +18,7 @@ get_header();
 		<?php the_post_thumbnail('full'); ?>
 		<div class="hero-banner__text-container container">
 			<div class="hero-banner__text-inner-container">
-				<h2 class="hero-banner__title">Welcome to Diamond Liquour</h2>
+				<h2 class="hero-banner__title">Welcome to Diamond Liquor</h2>
 				<p class="hero-banner__subtitle">Large variety of wines, spirits, and craft beers</p>
 				<div class="hero-banner__cta-container">
 					<a class="hero-banner__cta" href="contact">Contact Us</a>
