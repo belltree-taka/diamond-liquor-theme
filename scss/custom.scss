@@ -275,6 +275,8 @@ a.hero-banner__cta {
                     flex-flow: column nowrap;
                     gap: 1.75rem;
                     .card{
+                        width: 100%;
+                        margin-bottom: 28px;
                         padding: 1rem;
                         border: 2px solid var(--red-700);
                         background-color: var(--white);
@@ -319,6 +321,8 @@ a.hero-banner__cta {
                     flex-flow: column nowrap;
                     gap: 1.75rem;
                     .card{
+                        width: 100%;
+                        margin-bottom: 28px;
                         padding: 1rem;
                         background-color: var(--off-white);
                         border-radius: 10px;
@@ -631,6 +635,7 @@ a.hero-banner__cta {
                         flex-flow: row wrap;
                         .card{
                             width: calc((100% - 1.75rem) / 2);
+                            margin-bottom: 28px;
                         }
                     }
                 }
@@ -648,6 +653,7 @@ a.hero-banner__cta {
                         flex-flow: row wrap;
                         .card{
                             width: calc((100% - 1.75rem) / 2);
+                            margin-bottom: 28px;
                         }
                     }
                 }
@@ -757,6 +763,7 @@ a.hero-banner__cta {
                     & > .wp-block-group__inner-container{
                         .card{
                             width: calc((100% - 3.5rem) / 3);
+                            margin-bottom: 28px;
                         }
                     }
                 }
@@ -768,6 +775,7 @@ a.hero-banner__cta {
                     & > .wp-block-group__inner-container{
                         .card{
                             width: calc((100% - 3.5rem) / 3);
+                            margin-bottom: 28px;
                         }
                     }
                 }

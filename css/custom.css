@@ -238,6 +238,8 @@ a.hero-banner__cta {
   gap: 1.75rem;
 }
 .home section.current-promotions > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container .card {
+  width: 100%;
+  margin-bottom: 28px;
   padding: 1rem;
   border: 2px solid var(--red-700);
   background-color: var(--white);
@@ -279,6 +281,8 @@ a.hero-banner__cta {
   gap: 1.75rem;
 }
 .home section.review > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container .card {
+  width: 100%;
+  margin-bottom: 28px;
   padding: 1rem;
   background-color: var(--off-white);
   border-radius: 10px;
@@ -561,6 +565,7 @@ a.hero-banner__cta {
   }
   .home section.current-promotions > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container .card {
     width: calc((100% - 1.75rem) / 2);
+    margin-bottom: 28px;
   }
   .home section.review {
     padding: 3rem 1.5rem 5rem;
@@ -575,6 +580,7 @@ a.hero-banner__cta {
   }
   .home section.review > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container .card {
     width: calc((100% - 1.75rem) / 2);
+    margin-bottom: 28px;
   }
   .home section.event-inquiry > .wp-block-group__inner-container {
     flex-flow: row wrap;
@@ -641,8 +647,10 @@ a.hero-banner__cta {
   }
   .home section.current-promotions > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container .card {
     width: calc((100% - 3.5rem) / 3);
+    margin-bottom: 28px;
   }
   .home section.review > .wp-block-group__inner-container .card-container > .wp-block-group__inner-container .card {
     width: calc((100% - 3.5rem) / 3);
+    margin-bottom: 28px;
   }
 }/*# sourceMappingURL=custom.css.map */

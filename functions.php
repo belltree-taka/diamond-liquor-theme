@@ -152,6 +152,16 @@ function diamond_liquor_theme_scripts() {
 
 	wp_enqueue_script(
 		'diamond-liquor-theme-copyright',get_template_directory_uri() . '/js/copyright-year.js',array(),_S_VERSION,true);
+	
+	// Masonry
+	wp_enqueue_script('masonry');
+	wp_enqueue_script(
+		'custom-masonry',
+		get_template_directory_uri() . '/js/masonry.js',
+		array('jquery', 'masonry'),
+		null,
+		true
+	);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
